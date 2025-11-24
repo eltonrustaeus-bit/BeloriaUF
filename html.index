@@ -1,0 +1,152 @@
+import React from 'react'
+import Head from 'next/head'
+import { motion } from 'framer-motion'
+
+// Usage: paste this file as `pages/index.jsx` in a Next.js + Tailwind project
+// Tailwind, Framer Motion and Google Fonts should be installed/configured in the project.
+
+export default function BeloriaUF() {
+  return (
+    <>
+      <Head>
+        <title>Beloria UF — Premium datafodral</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet" />
+        <meta name="description" content="Beloria UF — minimalistiska, eleganta och premium datafodral" />
+        <style>{`
+          :root { --gold: #B79D46; }
+          /* Ensure Tailwind base fonts are overridden where needed */
+          .playfair { font-family: 'Playfair Display', serif; }
+          .libre { font-family: 'Libre Baskerville', serif; }
+        `}</style>
+      </Head>
+
+      <div className="min-h-screen bg-white text-gray-900 antialiased">
+        <header className="max-w-5xl mx-auto px-6 py-8 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <div className="w-10 h-10 rounded-md border" style={{ borderColor: 'var(--gold)' }} />
+            <span className="playfair text-lg tracking-wide">Beloria UF</span>
+          </div>
+          <nav className="libre text-sm text-gray-700">
+            <a className="mr-6 hover:text-black" href="#products">Produkter</a>
+            <a className="mr-6 hover:text-black" href="#why">Varför Beloria</a>
+            <a className="hover:text-black" href="#kontakt">Kontakt</a>
+          </nav>
+        </header>
+
+        {/* HERO */}
+        <section className="max-w-5xl mx-auto px-6 py-12 flex flex-col lg:flex-row items-center gap-12">
+          <div className="flex-1">
+            <motion.h1 className="playfair text-4xl lg:text-6xl leading-tight" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+              Premium datafodral — enkelhet möter exklusivitet
+            </motion.h1>
+
+            <motion.p className="libre mt-6 text-lg text-gray-700 max-w-xl" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15 }}>
+              Handgjorda, slitstarka fodral designade för att skydda dina enheter med tidlös estetik. Minimal design, noggrant utvalda material.
+            </motion.p>
+
+            <motion.div className="mt-8 flex items-center gap-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
+              <a href="#products" className="inline-flex items-center justify-center px-6 py-3 rounded-md shadow-sm libre font-medium" style={{ background: 'var(--gold)', color: '#fff' }}>
+                Köp nu
+              </a>
+              <a href="#why" className="libre text-sm underline underline-offset-4 text-gray-600">Läs mer</a>
+            </motion.div>
+          </div>
+
+          <motion.div className="flex-1 max-w-md w-full rounded-xl p-6" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.25 }}>
+            <div className="bg-white border rounded-2xl p-6 shadow-lg" style={{ borderColor: 'rgba(183,157,70,0.12)' }}>
+              <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0c9f4a1b5b7a7f2c8a3d5c8b2b9b9d1e" alt="Datafodral" className="w-full h-64 object-cover rounded-lg" />
+            </div>
+          </motion.div>
+        </section>
+
+        {/* PRODUCT HIGHLIGHT */}
+        <section id="products" className="max-w-5xl mx-auto px-6 py-16">
+          <motion.h2 className="playfair text-3xl mb-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+            Våra produkter
+          </motion.h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {['Classic', 'Slim', 'Weekend'].map((name, i) => (
+              <motion.article key={name} className="border rounded-2xl p-6 libre" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }}>
+                <div className="w-full h-44 rounded-md overflow-hidden mb-4">
+                  <img src={`https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=${i}`} alt={name} className="w-full h-full object-cover" />
+                </div>
+                <h3 className="playfair text-xl mb-2">{name} — datafodral</h3>
+                <ul className="text-sm text-gray-600 mb-4">
+                  <li>• Kvalitet: premium material</li>
+                  <li>• Funktionalitet: perfekt passform</li>
+                  <li>• Design: tidlös & minimalistisk</li>
+                </ul>
+                <div className="flex items-center justify-between">
+                  <span className="playfair">399 kr</span>
+                  <a className="inline-flex items-center justify-center px-4 py-2 rounded-md libre" style={{ border: '1px solid var(--gold)', color: 'var(--gold)' }} href="#">
+                    Köp
+                  </a>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        </section>
+
+        {/* WHY SECTION */}
+        <section id="why" className="max-w-5xl mx-auto px-6 py-16">
+          <motion.h2 className="playfair text-3xl mb-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+            Varför välja Beloria UF?
+          </motion.h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <motion.div className="flex flex-col items-start gap-4 p-6 rounded-lg border libre" initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
+              <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ border: `1px solid var(--gold)` }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15 8H9L12 2Z" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+              <h4 className="playfair text-lg">Premium material</h4>
+              <p className="text-sm text-gray-600">Noggrant utvalda material som åldras vackert och skyddar dina enheter.</p>
+            </motion.div>
+
+            <motion.div className="flex flex-col items-start gap-4 p-6 rounded-lg border libre" initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
+              <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ border: `1px solid var(--gold)` }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12H21" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+              <h4 className="playfair text-lg">Snabb leverans</h4>
+              <p className="text-sm text-gray-600">Snabba och trygga leveranser i hela Sverige.</p>
+            </motion.div>
+
+            <motion.div className="flex flex-col items-start gap-4 p-6 rounded-lg border libre" initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
+              <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ border: `1px solid var(--gold)` }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 20V4" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+              <h4 className="playfair text-lg">Stilren design</h4>
+              <p className="text-sm text-gray-600">Enkelt formspråk som lyfter din vardag och dina enheter.</p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* CTA BANNER */}
+        <section className="max-w-5xl mx-auto px-6 py-12">
+          <div className="rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between" style={{ border: '1px solid rgba(183,157,70,0.08)' }}>
+            <div>
+              <h3 className="playfair text-2xl">Redo att uppgradera ditt skydd?</h3>
+              <p className="libre text-sm text-gray-600 mt-2">Få fri frakt över 600 kr.</p>
+            </div>
+            <a className="mt-6 sm:mt-0 inline-flex items-center justify-center px-6 py-3 rounded-md libre font-medium" style={{ background: 'var(--gold)', color: '#fff' }} href="#products">Köp nu</a>
+          </div>
+        </section>
+
+        {/* FOOTER */}
+        <footer id="kontakt" className="max-w-5xl mx-auto px-6 py-12 border-t" style={{ borderColor: 'rgba(183,157,70,0.08)' }}>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <span className="playfair text-lg">Beloria UF</span>
+              <p className="libre text-sm text-gray-600 mt-2">info@beloriauf.example</p>
+            </div>
+
+            <div className="libre text-sm text-gray-600">© {new Date().getFullYear()} Beloria UF — Alla rättigheter förbehållna</div>
+          </div>
+        </footer>
+      </div>
+    </>
+  )
+}
