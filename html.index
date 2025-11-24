@@ -1,127 +1,198 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Beloria UF – Premium Datafodral</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Libre Baskerville', serif;
-      background-color: #ffffff;
-      color: #000000;
-    }
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-    }
-    .gold { color: #B79D46; }
-    .btn {
-      background-color: #B79D46;
-      color: #fff;
-      padding: 12px 28px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 18px;
-      display: inline-block;
-      transition: opacity 0.2s ease;
-    }
-    .btn:hover { opacity: 0.85; }
-    header, section {
-      width: 100%;
-      max-width: 1200px;
-      margin: auto;
-      padding: 60px 20px;
-    }
-    .hero {
-      text-align: center;
-      padding-top: 100px;
-    }
-    .product-img {
-      width: 340px;
-      margin-top: 30px;
-      filter: drop-shadow(0px 8px 18px rgba(0,0,0,0.15));
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 40px;
-      text-align: center;
-      margin-top: 50px;
-    }
-    .icon-box {
-      padding: 20px;
-      border: 1px solid #B79D46;
-      border-radius: 8px;
-    }
-    footer {
-      border-top: 1px solid #B79D46;
-      text-align: center;
-      padding: 40px 20px;
-      margin-top: 60px;
-      font-size: 14px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sajto – Professionella webbplatser</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<style>
+/* --- (samma CSS som du skickade, oförändrat) --- */
+* {margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth;}
+body {font-family:'Roboto',sans-serif; background-color:#ffffff; color:#111; overflow-x:hidden; line-height:1.6;}
+body::before {content:""; position:fixed; top:0; left:0; width:100%; height:100%; z-index:-2; background:linear-gradient(270deg,#142b55,#1e3f80,#0f2a5a); background-size:600% 600%; animation:gradientShift 20s ease infinite;}
+#particles-js {position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;}
+#preloader {position:fixed;top:0;left:0;width:100%;height:100%; background:#142b55;display:flex;align-items:center;justify-content:center; color:white;font-size:1.5em;z-index:9999;}
+header { background-color:rgba(20,43,85,0.9); color:white; padding:15px 20px; position:sticky; top:0; z-index:100; display:flex; justify-content:space-between; align-items:center; }
+.menu-toggle {font-size:30px; cursor:pointer;}
+nav.mobile-menu { display:none; flex-direction:column; background:rgba(20,43,85,0.95); position:absolute; top:60px; right:20px; border-radius:6px; padding:15px 25px; z-index:200; }
+nav.mobile-menu a { margin:12px 0; font-weight:bold; color:white; transition:0.3s; text-decoration:none; position:relative; }
+nav.mobile-menu a::after { content:''; position:absolute; left:0; bottom:-3px; width:0%; height:2px; background:#ffdd57; transition:0.3s; }
+nav.mobile-menu a:hover::after {width:100%;}
+nav.mobile-menu a:hover {transform:translateX(5px);}
+.hero { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; padding:120px 20px; color:#fff; gap:40px; }
+.hero img { width:300px; max-width:80%; border-radius:15px; animation:floatGlow 4s ease-in-out infinite alternate; }
+.hero-content { max-width:600px; text-align:center; }
+.hero-content h2 { font-size:3em; margin-bottom:20px; text-shadow:0 3px 8px rgba(0,0,0,0.4); animation:fadeInUp 1.2s ease forwards; }
+.hero-content p { font-size:1.2em; margin-bottom:40px; text-shadow:0 2px 5px rgba(0,0,0,0.3); animation:fadeInUp 1.4s ease forwards; }
+.btn { background-color:#1e3f80; color:white; padding:15px 40px; border-radius:8px; font-weight:bold; transition:0.3s; display:inline-block; text-decoration:none; position:relative; overflow:hidden; }
+.btn::after { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.15); transform:scaleX(0); transform-origin:left; transition:transform 0.4s ease; }
+.btn:hover::after { transform:scaleX(1); }
+.btn:hover { transform:scale(1.05); }
+section { opacity:0; transform:translateY(50px); transition:opacity 0.8s ease, transform 0.8s ease; }
+section.visible { opacity:1; transform:translateY(0); }
+.services { padding:100px 20px; background-color:rgba(255,255,255,0.95); text-align:center; border-top:2px solid #111; border-bottom:2px solid #111; }
+.services h2 { font-size:2.5em; margin-bottom:50px; color:#142b55; }
+.service-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
+.service-card { background-color:#fff; padding:35px; border-radius:12px; width:280px; box-shadow:0 5px 25px rgba(0,0,0,0.07); border:1px solid #111; transition:transform 0.4s, box-shadow 0.4s; }
+.service-card:hover { transform:translateY(-10px) scale(1.04); box-shadow:0 12px 30px rgba(0,0,0,0.12); }
+.service-card h3 { color:#142b55; margin-bottom:15px; }
+.about { padding:100px 20px; background-color:rgba(255,255,255,0.95); text-align:center; border-bottom:2px solid #111; }
+.about h2 { color:#142b55; margin-bottom:30px; }
+.about p { max-width:700px; margin:auto; }
+.cta { background:linear-gradient(90deg,rgba(20,43,85,0.95),rgba(30,63,128,0.95)); color:white; text-align:center; padding:120px 20px; }
+.cta h2 { margin-bottom:40px; }
+.cta a { background-color:#ffdd57; color:#142b55; padding:20px 50px; border-radius:8px; font-weight:bold; transition:0.3s; text-decoration:none; position:relative; overflow:hidden; }
+.cta a::after { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.2); transform:scaleX(0); transform-origin:left; transition:transform 0.4s ease; }
+.cta a:hover::after { transform:scaleX(1); }
+.cta a:hover { transform:scale(1.05); }
+.contact { padding:120px 20px; background-color:rgba(255,255,255,0.95); text-align:center; }
+.contact form { max-width:600px; margin:auto; display:flex; flex-direction:column; gap:15px; }
+.contact input, .contact textarea { padding:15px; border-radius:8px; border:1px solid #111; font-size:1em; }
+.contact button { background-color:#1e3f80; color:white; padding:15px; border:none; border-radius:8px; font-weight:bold; cursor:pointer; transition:0.3s; text-decoration:none; position:relative; overflow:hidden; }
+.contact button::after { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.15); transform:scaleX(0); transform-origin:left; transition:transform 0.4s ease; }
+.contact button:hover::after { transform:scaleX(1); }
+.contact button:hover { transform:scale(1.03); }
+#form-message { margin-top:15px; color:#142b55; font-weight:bold; }
+footer { background-color:rgba(20,43,85,0.95); color:white; text-align:center; padding:40px 20px; }
+footer .social a { color:white; margin:0 10px; font-size:22px; text-decoration:none; transition:0.3s; }
+footer .social a:hover { color:#ffdd57; transform:scale(1.2); }
+#scrollTopBtn { position:fixed; bottom:30px; right:30px; background-color:#142b55; color:white; border:none; border-radius:50%; width:45px; height:45px; font-size:22px; cursor:pointer; display:none; transition:background 0.3s; }
+#scrollTopBtn:hover { background-color:#1e3f80; transform:scale(1.1); }
+@keyframes gradientShift {0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+@keyframes fadeInUp {0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
+@keyframes floatGlow {0%{transform:translateY(0); box-shadow:0 0 15px rgba(255,255,255,0.3);}100%{transform:translateY(-15px); box-shadow:0 0 30px rgba(255,255,255,0.6);}}
+@media(max-width:900px){ .hero {flex-direction:column; text-align:center;} .hero img {width:70%;} .hero-content h2 {font-size:2.2em;} .hero-content p {font-size:1em;} .cta {padding:100px 20px;} }
+</style>
 </head>
-<body>
+<body data-user-id=""> <!-- sätt data-user-id om du vet användarens id när inloggad -->
 
-  <!-- HERO SECTION -->
-  <header class="hero">
-    <h1 class="gold">Beloria UF</h1>
-    <h2>Premium datafodral med minimalistisk och modern design</h2>
-    <p>Elegant hantverk, exklusiv känsla och maximal funktionalitet.</p>
-    <img src="YOUR_PRODUCT_IMAGE.jpg" alt="Datafodral" class="product-img" />
-    <br><br>
-    <a href="#products" class="btn">Köp nu</a>
-  </header>
+<div id="particles-js"></div>
+<div id="preloader">Laddar...</div>
 
-  <!-- PRODUCT HIGHLIGHT -->
-  <section id="products">
-    <h2 class="gold" style="text-align:center;">Våra datafodral</h2>
-    <div class="grid">
-      <div>
-        <img src="YOUR_PRODUCT_IMAGE.jpg" width="260" style="filter: drop-shadow(0px 6px 14px rgba(0,0,0,0.12));" />
-        <h3>Kvalitet</h3>
-        <p>Noggrant utvalda material med premiumkänsla.</p>
-      </div>
-      <div>
-        <img src="YOUR_PRODUCT_IMAGE.jpg" width="260" />
-        <h3>Funktionalitet</h3>
-        <p>Skydd, slitstyrka och optimal passform.</p>
-      </div>
-      <div>
-        <img src="YOUR_PRODUCT_IMAGE.jpg" width="260" />
-        <h3>Design</h3>
-        <p>Modern, elegant och stilren estetik.</p>
-      </div>
-    </div>
-  </section>
+<header>
+  <div></div>
+  <span class="menu-toggle">&#9776;</span>
+  <nav class="mobile-menu">
+    <a href="#hero">Hem</a>
+    <a href="#services">Tjänster</a>
+    <a href="#about">Om Oss</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+</header>
 
-  <!-- WHY BELORIA -->
-  <section>
-    <h2 class="gold" style="text-align:center;">Varför Beloria UF?</h2>
-    <div class="grid">
-      <div class="icon-box">
-        <h3>Premium material</h3>
-        <p>Endast högkvalitativa komponenter.</p>
-      </div>
-      <div class="icon-box">
-        <h3>Snabb leverans</h3>
-        <p>Effektiv och trygg leverans.</p>
-      </div>
-      <div class="icon-box">
-        <h3>Stilren design</h3>
-        <p>Minimalistisk look med guld-detaljer.</p>
-      </div>
-    </div>
-  </section>
+<section class="hero" id="hero">
+  <img src="image/IMG_9764.jpeg" alt="Hero image">
+  <div class="hero-content">
+    <h2>Webbplatser som stärker ditt varumärke</h2>
+    <p>Vi tar hand om allt det tekniska så att du kan fokusera på ditt företag.</p>
+    <a href="#services" class="btn">Se våra tjänster</a>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    Beloria UF – Premium Datafodral<br>
-    Kontakt: info@beloriauf.se
-  </footer>
+<section class="services" id="services">
+  <h2>Våra Tjänster</h2>
+  <div class="service-grid">
+    <div class="service-card"><h3>Webbdesign</h3><p>Skräddarsydda, moderna webbplatser som matchar ditt företags profil.</p></div>
+    <div class="service-card"><h3>Webbhantering</h3><p>Vi uppdaterar och underhåller webbplatser för säkerhet och stabilitet.</p></div>
+    <div class="service-card"><h3>Domän & Hosting</h3><p>Registrering av domän och koppling till webbplatsen.</p></div>
+    <div class="service-card"><h3>Support & Rådgivning</h3><p>Hjälp med problem och optimering av webbplatsen.</p></div>
+  </div>
+</section>
 
+<section class="about" id="about">
+  <h2>Om Sajto</h2>
+  <p>Sajto hjälper småföretag och UF-företag att skapa professionella webbplatser och underhålla dem. Vi tar hand om allt tekniskt arbete, från design till publicering.</p>
+</section>
+
+<section class="cta">
+  <h2>Redo att börja ditt projekt?</h2>
+  <a href="#contact">Kontakta oss idag</a>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Kontakt</h2>
+  <form id="contact-form">
+    <input type="text" name="name" placeholder="Ditt namn" required>
+    <input type="email" name="email" placeholder="Din e-post" required>
+    <input type="text" name="subject" placeholder="Ämne" required>
+    <textarea name="message" placeholder="Meddelande" rows="6" required></textarea>
+    <button type="submit">Skicka meddelande</button>
+    <div id="form-message"></div>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 Sajto. Alla rättigheter reserverade.</p>
+  <div class="social"><a href="#">🌐</a><a href="#">📧</a><a href="#">💼</a></div>
+</footer>
+
+<button id="scrollTopBtn">↑</button>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+/* --- UI- och preloader-skript (oförändrade) --- */
+window.addEventListener('load',()=>{document.getElementById('preloader').style.display='none';});
+const menuToggle=document.querySelector('.menu-toggle');
+const mobileMenu=document.querySelector('nav.mobile-menu');
+menuToggle.addEventListener('click',()=>{mobileMenu.style.display=mobileMenu.style.display==='flex'?'none':'flex';});
+document.querySelectorAll('nav a').forEach(link=>{link.addEventListener('click',()=>{mobileMenu.style.display='none';});});
+const scrollBtn=document.getElementById("scrollTopBtn");
+window.onscroll=function(){ scrollBtn.style.display=(document.body.scrollTop>200||document.documentElement.scrollTop>200)?"block":"none"; };
+scrollBtn.onclick=function(){ window.scrollTo({top:0,behavior:'smooth'}); };
+emailjs.init("VyAp14vU8LTIDyWC_");
+document.getElementById('contact-form').addEventListener('submit',function(event){
+  event.preventDefault();
+  const msg=document.getElementById('form-message');
+  msg.textContent="Skickar...";
+  emailjs.sendForm('service_7n71qvm','template_naoez01',this)
+  .then(()=>{msg.textContent="Meddelandet skickades!";this.reset();})
+  .catch(()=>{msg.textContent="Fel vid skickning. Försök igen.";});
+});
+particlesJS('particles-js',{particles:{number:{value:60},color:{value:"#ffffff"},shape:{type:"circle"},opacity:{value:0.3},size:{value:3},move:{speed:1}},interactivity:{events:{onhover:{enable:true,mode:"repulse"}}}});
+
+const sections=document.querySelectorAll("section");
+const revealOnScroll=()=>{const trigger=window.innerHeight*0.85; sections.forEach(sec=>{const top=sec.getBoundingClientRect().top;if(top<trigger)sec.classList.add("visible");});};
+window.addEventListener("scroll",revealOnScroll);
+revealOnScroll();
+
+/* --- Spårning: skicka visit till /track --- */
+/* Notera: endpointen (server) presenteras separat nedan. */
+(function sendVisit() {
+  try {
+    const payload = {
+      path: location.pathname + location.search,
+      referrer: document.referrer || null,
+      userAgent: navigator.userAgent || null,
+      language: navigator.language || null,
+      ts: new Date().toISOString(),
+      userId: document.body.getAttribute('data-user-id') || null // fylls server-side vid inlogg
+    };
+    const json = JSON.stringify(payload);
+    const url = '/track';
+
+    // Först: navigator.sendBeacon (säkrare vid unload)
+    if (navigator.sendBeacon) {
+      const ok = navigator.sendBeacon(url, json);
+      // sendBeacon returnerar boolean. Vi försöker fallback om false.
+      if (ok) return;
+    }
+
+    // Fallback: vanlig fetch (icke-blockerande)
+    fetch(url, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: json,
+      keepalive: true // hjälper vid unload
+    }).catch(err => {
+      // tyst felhantering för att inte bryta UX
+      console.warn('Track fetch fel:', err);
+    });
+  } catch (e) {
+    console.warn('Track error:', e);
+  }
+})();
+</script>
 </body>
 </html>
