@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produkter – Beloria UF</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Libre Baskerville', serif;
+            background-color: #ffffff;
+            color: #111;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            border-bottom: 1px solid #B79D46;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #111;
+        }
+
+        nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #111;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #B79D46;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 10% 60px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 46px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            margin-top: 0;
+            font-size: 18px;
+            color: #444;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            padding: 40px 10% 80px;
+        }
+
+        .product-card {
+            border: 1px solid #B79D46;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 18px;
+        }
+
+        .product-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-size: 18px;
+            color: #B79D46;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 26px;
+            background-color: #B79D46;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid #B79D46;
+            font-size: 14px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Beloria UF</div>
+        <nav>
+            <a href="index.html">Hem</a>
+            <a href="om-oss.html">Om oss</a>
+            <a href="produkter.html">Produkter</a>
+            <a href="kop.html">Köp</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Våra Premium Datafodral</h1>
+        <p>Minimalistiska, moderna och skapade med fokus på kvalitet och design.</p>
+    </section>
+
+    <section class="product-grid">
+        <div class="product-card">
+            <img src="product1.jpg" alt="Beloria Datafodral 1">
+            <h3>Beloria Original</h3>
+            <p class="price">349 kr</p>
+            <a href="kop.html" class="btn">Köp nu</a>
+        </div>
+
+        <div class="product-card">
+            <img src="product2.jpg" alt="Beloria Datafodral 2">
+            <h3>Beloria Slim Edition</h3>
+            <p class="price">399 kr</p>
+            <a href="kop.html" class="btn">Köp nu</a>
+        </div>
+
+        <div class="product-card">
+            <img src="product3.jpg" alt="Beloria Datafodral 3">
+            <h3>Beloria Executive</h3>
+            <p class="price">499 kr</p>
+            <a href="kop.html" class="btn">Köp nu</a>
+        </div>
+    </section>
+
+    <footer>
+        Beloria UF © 2025 – Premium Design & Funktionalitet
+    </footer>
+</body>
+</html>
