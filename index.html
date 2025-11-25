@@ -3,45 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Test Sida – ReHit UF</title>
+<title>Beloria UF – Hem</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <style>
-* {margin:0; padding:0; box-sizing:border-box;}
-body {font-family:'Roboto',sans-serif; background-color:#ffffff; color:#111; line-height:1.6;}
-header {background-color:#143d28; color:white; padding:15px 20px; display:flex; justify-content:space-between; align-items:center;}
-nav a {color:white; margin-left:20px; text-decoration:none; font-weight:bold;}
-.hero {display:flex; flex-wrap:wrap; align-items:center; justify-content:center; padding:80px 20px; gap:40px; background:#0f1f17; color:white;}
-.hero img {width:300px; max-width:80%; border-radius:15px;}
-.hero-content {max-width:600px; text-align:center;}
-.hero-content h2 {font-size:2.5em; margin-bottom:20px;}
-.hero-content p {font-size:1.2em; margin-bottom:30px;}
-.btn {background:#A8D5BA; color:#0f1f17; padding:12px 30px; border-radius:30px; text-decoration:none; font-weight:bold; transition:0.3s;}
-.btn:hover {background:#7FA89C;}
-footer {background:#0c1a13; color:#A8D5BA; text-align:center; padding:20px; margin-top:50px;}
+/* --- Grundstil --- */
+body { font-family:'Libre Baskerville', serif; margin:0; padding:0; color:#111; }
+header { display:flex; justify-content:space-between; align-items:center; padding:20px 8%; background:rgba(255,255,255,0.9); position:sticky; top:0; z-index:100; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+.logo { font-family:'Playfair Display', serif; font-size:32px; font-weight:700; }
+nav a { margin-left:25px; text-decoration:none; color:#111; transition:0.3s; font-weight:600;}
+nav a:hover { color:#B79D46; }
+
+/* --- Hero sektion med bakgrundsbild --- */
+.hero {
+  height:90vh;
+  background: url('images/hero.jpg') center/cover no-repeat;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  padding:0 20px;
+  position:relative;
+}
+.hero::after {
+  content:"";
+  position:absolute;
+  top:0; left:0; width:100%; height:100%;
+  background:rgba(0,0,0,0.4);
+  z-index:0;
+}
+.hero-content {
+  position:relative;
+  z-index:1;
+}
+.hero h1 { font-family:'Playfair Display', serif; font-size:48px; margin-bottom:20px; text-shadow: 0 2px 6px rgba(0,0,0,0.5);}
+.hero p { font-size:20px; margin-bottom:30px; text-shadow: 0 1px 4px rgba(0,0,0,0.5);}
+.btn { padding:15px 35px; background:#B79D46; color:white; border-radius:6px; text-decoration:none; font-size:16px; transition:0.3s; font-weight:600; }
+.btn:hover { opacity:0.85; }
+
+/* --- Om oss sektion --- */
+.about { padding:80px 10%; text-align:center; background:#fdfcf7; }
+.about h2 { font-family:'Playfair Display', serif; font-size:36px; margin-bottom:20px; color:#B79D46; }
+.about p { font-size:18px; color:#444; max-width:700px; margin:auto; line-height:1.6; }
+
+/* --- Footer --- */
+footer { text-align:center; padding:40px; border-top:1px solid #B79D46; font-size:14px; color:#444; margin-top:50px; }
+
+@media(max-width:768px){
+  .hero h1 { font-size:32px; }
+  .hero p { font-size:16px; }
+  header { flex-direction:column; align-items:flex-start; gap:15px; }
+  nav a { margin-left:0; margin-right:15px; }
+}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>ReHit UF – Test Sida</h1>
-  <nav>
-    <a href="index.html">Hem</a>
-    <a href="test.html">Test</a>
-  </nav>
+    <div class="logo">Beloria UF</div>
+    <nav>
+        <a href="index.html">Hem</a>
+        <a href="om-oss.html">Om oss</a>
+        <a href="produkter.html">Produkter</a>
+    </nav>
 </header>
 
 <section class="hero">
-  <img src="image/hero.jpg" alt="Test Produkt">
-  <div class="hero-content">
-    <h2>Golfboll Test</h2>
-    <p>Detta är en testprodukt för att se att bilden visas korrekt.</p>
-    <a href="#" class="btn">Lägg i kundvagn</a>
-  </div>
+    <div class="hero-content">
+        <h1>Välkommen till Beloria UF</h1>
+        <p>Premium datafodral – minimalistiska, moderna och designade med fokus på kvalitet.</p>
+        <a href="produkter.html" class="btn">Se våra produkter</a>
+    </div>
+</section>
+
+<section class="about">
+    <h2>Om Beloria UF</h2>
+    <p>Beloria UF skapar eleganta och funktionella datafodral som kombinerar stil och skydd. Våra produkter är noggrant utvalda för att passa både vardag och professionella behov, med en minimalistisk design som uppskattas av alla användare.</p>
 </section>
 
 <footer>
-  <p>© 2025 ReHit UF – Alla rättigheter förbehållna</p>
+    Beloria UF © 2025 – Premium Design & Funktionalitet
 </footer>
 
 </body>
 </html>
-
