@@ -6,80 +6,140 @@
 <title>Produkter – Beloria UF</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <style>
-body { font-family:'Libre Baskerville', serif; margin:0; padding:0; color:#fff; background:#0f0f0f; }
-header { display:flex; justify-content:space-between; align-items:center; padding:20px 8%; background:rgba(0,0,0,0.85); position:sticky; top:0; z-index:100; box-shadow:0 2px 10px rgba(0,0,0,0.5);}
-.logo { font-family:'Playfair Display', serif; font-size:32px; font-weight:700; color:#B79D46; }
-nav a { margin-left:25px; text-decoration:none; color:#fff; transition:0.3s; font-weight:600;}
-nav a:hover { color:#B79D46; }
+  body {
+    margin: 0;
+    font-family: 'Libre Baskerville', serif;
+    background-color: #000;
+    color: #fff;
+  }
 
-/* --- Hero sektion --- */
-.hero { text-align:center; padding:80px 10%; }
-.hero h1 { font-family:'Playfair Display', serif; font-size:48px; margin-bottom:20px; }
-.hero p { font-size:20px; color:#ddd; margin-bottom:30px; }
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    border-bottom: 1px solid #B79D46;
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #B79D46;
+  }
+  nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+  nav a:hover { color: #B79D46; }
 
-/* --- Produkter grid --- */
-.product-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:40px; padding:40px 10%; }
-.product-card { background:#111; border:1px solid #B79D46; border-radius:10px; padding:20px; width:280px; text-align:center; transition:0.3s; }
-.product-card:hover { transform:translateY(-5px); box-shadow:0 8px 25px rgba(0,0,0,0.6);}
-.product-card img { width:100%; height:auto; border-radius:8px; margin-bottom:15px; }
-.product-card h3 { font-family:'Playfair Display', serif; font-size:22px; margin-bottom:8px; color:#B79D46; }
-.price { font-size:18px; color:#fff; margin-bottom:15px; }
-.btn { display:inline-block; padding:12px 26px; background:#B79D46; color:black; border-radius:6px; font-size:15px; transition:0.3s; font-weight:600; text-decoration:none; }
-.btn:hover { opacity:0.85; }
+  /* Hero / Produktbild */
+  .hero {
+    position: relative;
+    height: 60vh;
+    background: url('images/hero.jpg') center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+  }
 
-/* --- Footer --- */
-footer { text-align:center; padding:40px; border-top:1px solid #B79D46; font-size:14px; color:#ddd; margin-top:50px; }
+  /* Produkt-sektion */
+  .product-section {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 10%;
+    text-align: center;
+  }
+  .product-section img {
+    width: 300px;
+    max-width: 80%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+  .product-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #B79D46;
+    margin-bottom: 15px;
+  }
+  .product-section p {
+    font-size: 20px;
+    color: #ddd;
+    margin-bottom: 25px;
+    line-height: 1.5;
+  }
+  .btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #B79D46;
+    color: #000;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  .btn:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+  }
 
-@media(max-width:768px){
-  .hero h1 { font-size:32px; }
-  .hero p { font-size:16px; }
-  .product-card { width:90%; }
-  header { flex-direction:column; align-items:flex-start; gap:15px; }
-  nav a { margin-left:0; margin-right:15px; }
-}
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #B79D46;
+    font-size: 14px;
+    color: #aaa;
+  }
+
+  @media(max-width:768px){
+    .hero { height: 40vh; }
+    .product-section h2 { font-size: 28px; }
+    .product-section p { font-size: 16px; }
+    .product-section img { width: 80%; }
+  }
 </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">Beloria UF</div>
-    <nav>
-        <a href="index.html">Hem</a>
-        <a href="om-oss.html">Om oss</a>
-        <a href="produkter.html">Produkter</a>
-    </nav>
+  <div class="logo">Beloria UF</div>
+  <nav>
+    <a href="index.html">Hem</a>
+    <a href="om-oss.html">Om oss</a>
+    <a href="produkter.html">Produkter</a>
+  </nav>
 </header>
 
-<section class="hero">
-    <h1>Våra Produkter</h1>
-    <p>Premium datafodral – minimalistiska, moderna och designade med fokus på kvalitet.</p>
-</section>
+<!-- Hero-bilden -->
+<section class="hero"></section>
 
-<section class="product-grid">
-    <div class="product-card">
-        <!-- Här är hero.jpg som produktbild -->
-        <img src="images/hero.jpg" alt="Beloria Original">
-        <h3>Beloria Original</h3>
-        <p class="price">349 kr</p>
-        <a href="#" class="btn">Köp nu</a>
-    </div>
-    <div class="product-card">
-        <img src="images/product2.jpg" alt="Beloria Premium">
-        <h3>Beloria Premium</h3>
-        <p class="price">499 kr</p>
-        <a href="#" class="btn">Köp nu</a>
-    </div>
-    <div class="product-card">
-        <img src="images/product3.jpg" alt="Beloria Slim">
-        <h3>Beloria Slim</h3>
-        <p class="price">399 kr</p>
-        <a href="#" class="btn">Köp nu</a>
-    </div>
-    <!-- Lägg till fler produkter här -->
+<!-- Produkt -->
+<section class="product-section">
+  <img src="images/hero.jpg" alt="Beloria Original">
+  <h2>Beloria Original</h2>
+  <p>Premium datafodral med minimalistisk design, skapad med fokus på kvalitet och funktion.</p>
+  <a href="#" class="btn">Köp nu</a>
 </section>
 
 <footer>
-    Beloria UF © 2025 – Premium Design & Funktionalitet
+  Beloria UF © 2025 – Premium Design & Funktionalitet
 </footer>
 
 </body>
