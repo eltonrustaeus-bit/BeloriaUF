@@ -36,40 +36,21 @@
   }
   nav a:hover { color: #B79D46; }
 
-  /* Hero / Produktbild */
-  .hero {
-    position: relative;
-    height: 60vh;
-    background: url('images/hero.jpg') center center / cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-  .hero::after {
-    content: "";
-    position: absolute;
-    top:0; left:0;
-    width:100%; height:100%;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 1;
-  }
-
   /* Produkt-sektion */
   .product-section {
-    position: relative;
-    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 10%;
+    justify-content: center;
+    height: 100vh;
     text-align: center;
+    padding: 0 10%;
   }
   .product-section img {
-    width: 300px;
+    width: 350px;
     max-width: 80%;
     border-radius: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
   .product-section h2 {
     font-family: 'Playfair Display', serif;
@@ -102,14 +83,13 @@
   /* Footer */
   footer {
     text-align: center;
-    padding: 30px;
+    padding: 20px;
     border-top: 1px solid #B79D46;
     font-size: 14px;
     color: #aaa;
   }
 
   @media(max-width:768px){
-    .hero { height: 40vh; }
     .product-section h2 { font-size: 28px; }
     .product-section p { font-size: 16px; }
     .product-section img { width: 80%; }
@@ -126,9 +106,6 @@
     <a href="produkter.html">Produkter</a>
   </nav>
 </header>
-
-<!-- Hero-bilden -->
-<section class="hero"></section>
 
 <!-- Produkt -->
 <section class="product-section">
