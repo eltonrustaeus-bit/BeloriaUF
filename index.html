@@ -6,102 +6,97 @@
 <title>Beloria UF – Hem</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <style>
-html, body {
-  margin:0;
-  padding:0;
-  height:100vh;
-  font-family:'Libre Baskerville', serif;
-  background:#000;
-  color:#fff;
-  display:flex;
-  flex-direction:column;
-  overflow:hidden;
-}
+  body {
+    margin:0;
+    padding:0;
+    font-family:'Libre Baskerville', serif;
+    background:#000;
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+  }
 
-/* Header / Menybar */
-header {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:12px 8%;
-  border-bottom:1px solid #B79D46;
-  flex:0 0 auto;
-  background:#000;
-  box-sizing:border-box;
-}
-.logo {
-  font-family:'Playfair Display', serif;
-  font-size:26px;
-  font-weight:700;
-  color:#B79D46;
-}
-nav a {
-  margin-left:20px;
-  text-decoration:none;
-  color:#fff;
-  font-weight:600;
-  transition:0.3s;
-}
-nav a:hover { color:#B79D46; }
+  /* Header */
+  header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    border-bottom:1px solid #B79D46;
+  }
+  .logo {
+    font-family:'Playfair Display', serif;
+    font-size:28px;
+    font-weight:700;
+    color:#B79D46;
+  }
+  nav a {
+    margin-left:25px;
+    text-decoration:none;
+    color:#fff;
+    font-weight:600;
+    transition:0.3s;
+  }
+  nav a:hover { color:#B79D46; }
 
-/* Hero / bild + text */
-.hero {
-  flex:1 1 auto;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:10px;
-}
-.hero img {
-  width:220px;
-  border-radius:12px;
-  border:3px solid #B79D46;
-  box-shadow:0 6px 20px rgba(0,0,0,0.5);
-  margin-bottom:25px;
-}
-.hero h1 {
-  font-family:'Playfair Display', serif;
-  font-size:28px;
-  margin-bottom:15px;
-  color:#B79D46;
-}
-.hero p {
-  font-size:16px;
-  color:#ddd;
-  margin-bottom:15px;
-  max-width:480px;
-  line-height:1.6;
-}
-.btn {
-  display:inline-block;
-  padding:12px 28px;
-  background:#B79D46;
-  color:#000;
-  border-radius:8px;
-  font-weight:700;
-  font-size:16px;
-  text-decoration:none;
-  transition:0.3s;
-}
-.btn:hover { opacity:0.85; transform:translateY(-2px); }
+  /* Hero / bild + text */
+  .hero {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px 10px;
+    flex:1;
+  }
+  .hero img {
+    width:180px;
+    border-radius:12px;
+    border:3px solid #B79D46;
+    box-shadow:0 6px 20px rgba(0,0,0,0.5);
+    margin-bottom:25px;
+  }
+  .hero h1 {
+    font-family:'Playfair Display', serif;
+    font-size:26px;
+    margin-bottom:15px;
+    color:#B79D46;
+  }
+  .hero p {
+    font-size:15px;
+    color:#ddd;
+    margin-bottom:20px;
+    max-width:450px;
+    line-height:1.5;
+  }
+  .btn {
+    display:inline-block;
+    padding:12px 28px;
+    background:#B79D46;
+    color:#000;
+    border-radius:8px;
+    font-weight:700;
+    font-size:16px;
+    text-decoration:none;
+    transition:0.3s;
+  }
+  .btn:hover { opacity:0.85; transform:translateY(-2px); }
 
-/* Footer */
-footer {
-  flex:0 0 auto;
-  text-align:center;
-  padding:15px 0;
-  border-top:1px solid #B79D46;
-  font-size:14px;
-  color:#fff;
-}
+  footer {
+    text-align:center;
+    padding:15px 0;
+    border-top:1px solid #B79D46;
+    font-size:14px;
+    color:#fff;
+  }
 
-@media(max-width:768px){
-  .hero img { width:180px; }
-  .hero h1 { font-size:24px; }
-  .hero p { font-size:14px; }
-}
+  @media(max-width:768px){
+    .hero img { width:140px; }
+    .hero h1 { font-size:22px; }
+    .hero p { font-size:14px; max-width:300px; }
+    .btn { padding:10px 22px; font-size:14px; }
+  }
 </style>
 </head>
 <body>
