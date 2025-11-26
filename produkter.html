@@ -8,11 +8,10 @@
     <style>
         body {
             margin: 0;
-            padding: 0;
             font-family: Arial, sans-serif;
             background: black;
             color: white;
-            overflow: hidden; /* Ingen scroll */
+            overflow: hidden; /* ingen scroll */
         }
 
         /* ---------------- NAVBAR ---------------- */
@@ -21,81 +20,80 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 8px 20px;
-            box-sizing: border-box;
+            padding: 6px 18px;
             position: fixed;
             top: 0;
             z-index: 10;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.75);
             backdrop-filter: blur(6px);
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 12px;
-            font-size: 1rem;
+            margin: 0 10px;
+            font-size: 0.9rem;
             transition: opacity 0.3s;
         }
         nav a:hover { opacity: 0.7; }
 
-        /* ------------- PAGE LAYOUT ---------------- */
+        /* ---------------- LAYOUT ---------------- */
         .container {
-            display: flex;
             height: 100vh;
             width: 100vw;
-            padding-top: 60px; /* utrymme för navbar */
+            display: flex;
+            padding-top: 55px;
             box-sizing: border-box;
             justify-content: center;
             align-items: center;
-            gap: 3vw;
+            gap: 2.5vw;
         }
 
-        /* ---------------- LEFT IMAGE ---------------- */
+        /* ---------------- IMAGE ---------------- */
         .product-image {
-            width: 33%;
-            max-width: 320px;
-            border-radius: 15px;
+            width: 28%;
+            max-width: 260px;
+            border-radius: 12px;
             animation: fadeIn 1.2s ease-out;
         }
 
-        /* ---------------- RIGHT CONTENT ---------------- */
+        /* ---------------- TEXT ---------------- */
         .info-box {
-            width: 45%;
+            width: 40%;
             animation: slideUp 1.2s ease-out;
         }
 
         .info-box h1 {
-            font-size: 2.2rem;
-            margin: 0 0 12px;
+            font-size: 1.9rem;
+            margin: 0 0 10px;
         }
 
         .info-box p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             margin: 0;
             opacity: 0.9;
         }
 
-        /* -------------- FEATURES BOXES -------------- */
+        /* ---------------- FEATURES ---------------- */
         .features {
             position: absolute;
-            bottom: 2vh;
+            bottom: 3.5vh;
             left: 50%;
             transform: translateX(-50%);
-            width: 85%;
+            width: 70%;
             display: flex;
             justify-content: space-between;
-            gap: 1vw;
+            gap: 0.8vw;
         }
 
         .feature-card {
             width: 48%;
-            background: rgba(255,255,255,0.07);
-            padding: 12px;
-            border-radius: 12px;
+            background: rgba(255,255,255,0.08);
+            padding: 10px;
+            border-radius: 10px;
             text-align: center;
+            font-size: 0.8rem;
             backdrop-filter: blur(6px);
-            font-size: 0.9rem;
             animation: fadeIn 1.4s ease-out;
         }
 
@@ -106,43 +104,49 @@
         }
 
         @keyframes slideUp {
-            from { opacity: 0; transform: translateY(25px); }
+            from { opacity: 0; transform: translateY(20px); }
             to   { opacity: 1; transform: translateY(0); }
         }
 
-        /* --------------- MOBILE FIX --------------- */
+        /* ---------------- MOBILE ---------------- */
         @media (max-width: 768px) {
-            body { overflow: hidden; }
+
+            nav a {
+                font-size: 0.85rem;
+            }
 
             .container {
                 flex-direction: column;
-                justify-content: flex-start;
-                padding-top: 75px;
-                gap: 2vh;
+                padding-top: 70px;
+                gap: 1.5vh;
             }
 
             .product-image {
-                width: 55%;
-                max-width: 260px;
+                width: 45%;
+                max-width: 200px;
             }
 
             .info-box {
-                width: 85%;
+                width: 80%;
                 text-align: center;
             }
 
             .info-box h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
+            }
+
+            .info-box p {
+                font-size: 0.85rem;
             }
 
             .features {
-                bottom: 1.5vh;
-                width: 92%;
+                bottom: 2vh;
+                width: 85%;
             }
 
             .feature-card {
-                font-size: 0.8rem;
-                padding: 10px;
+                font-size: 0.75rem;
+                padding: 8px;
             }
         }
     </style>
@@ -150,7 +154,6 @@
 
 <body>
 
-    <!-- NAVBAR -->
     <nav>
         <div><strong>Beloria UF</strong></div>
         <div>
@@ -160,23 +163,21 @@
         </div>
     </nav>
 
-    <!-- MAIN CONTENT -->
     <div class="container">
-        <img src="fodral.png" class="product-image" alt="Produktbild">
-        
+        <img src="fodral.png" class="product-image" alt="Produkt">
+
         <div class="info-box">
             <h1>Datorfodral – Beloria UF</h1>
             <p>
-                Upptäck vårt premium-datorfodral med inbyggd musmatta.  
-                Skapat för elever, entreprenörer och kreativa personer som vill arbeta effektivt överallt.
+                Vårt premium-datorfodral med inbyggd musmatta.  
+                Perfekt för elever, entreprenörer och kreativa personer.
             </p>
         </div>
     </div>
 
-    <!-- FEATURES -->
     <div class="features">
-        <div class="feature-card">Premium Material – Slitstarkt och elegant</div>
-        <div class="feature-card">Inbyggd Musmatta – Få maximal produktivitet var du än är</div>
+        <div class="feature-card">Premiummaterial – slitstarkt & elegant</div>
+        <div class="feature-card">Inbyggd musmatta – arbeta överallt</div>
     </div>
 
 </body>
