@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Produkter – Beloria UF</title>
+<title>Beloria UF – Hem</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <style>
   html, body {
@@ -42,7 +42,7 @@
   }
   nav a:hover { color:#B79D46; }
 
-  /* Hero / produkt */
+  /* Hero / bild + text */
   .hero {
     flex:1 1 auto;
     display:flex;
@@ -53,29 +53,24 @@
     padding:0 10px;
   }
   .hero img {
-    width:220px;               /* Mindre bild */
+    width:260px;
     border-radius:12px;
-    border:3px solid #B79D46;  /* Guld-outline */
+    border:3px solid #B79D46;
     box-shadow:0 6px 20px rgba(0,0,0,0.5);
-    margin-bottom:30px;        /* Luft mellan bild och rubrik */
+    margin-bottom:30px;
   }
   .hero h1 {
     font-family:'Playfair Display', serif;
-    font-size:30px;
+    font-size:32px;
     margin-bottom:20px;
     color:#B79D46;
   }
   .hero p {
-    font-size:17px;
+    font-size:18px;
     color:#ddd;
-    margin-bottom:15px;
+    margin-bottom:25px;
     max-width:480px;
     line-height:1.6;
-  }
-  .price {
-    font-size:22px;
-    color:#B79D46;
-    margin-bottom:25px;
   }
   .btn {
     display:inline-block;
@@ -102,9 +97,9 @@
 
   /* Responsivt */
   @media(max-width:768px){
-    .hero img { width:180px; }
+    .hero img { width:200px; }
     .hero h1 { font-size:26px; }
-    .hero p, .price { font-size:15px; }
+    .hero p { font-size:15px; }
   }
 </style>
 </head>
@@ -114,17 +109,16 @@
   <div class="logo">Beloria UF</div>
   <nav>
     <a href="index.html">Hem</a>
-    <a href="om-oss.html">Om oss</a>
     <a href="produkter.html">Produkter</a>
+    <a href="om-oss.html">Om oss</a>
   </nav>
 </header>
 
 <section class="hero">
-  <img src="images/hero1.jpg" alt="Beloria Produkt">
-  <h1>Minimalistiskt Datafodral</h1>
-  <p>Elegant och stilrent datafodral i premiumkvalitet, skapat med fokus på design och funktion.</p>
-  <p class="price">Pris: 200 kr inkl. frakt</p>
-  <a href="#" class="btn">Köp nu</a>
+  <img src="images/hero.jpg" alt="Beloria Produkt">
+  <h1>Minimalistiska och moderna datafodral</h1>
+  <p>Skapade med fokus på kvalitet, funktion och elegant design – Beloria UF levererar premiumprodukter som sticker ut.</p>
+  <a href="produkter.html" class="btn">Se produkterna</a>
 </section>
 
 <footer>
