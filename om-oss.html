@@ -59,9 +59,11 @@ footer { flex:0 0 auto; text-align:center; padding:1vh 0; border-top:1px solid #
 <footer>Beloria UF © 2025 – Premium Design & Funktionalitet</footer>
 
 <script>
-window.addEventListener('load', ()=>{ document.querySelector('.main-wrapper').classList.add('visible'); });
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', e => {
+window.addEventListener('load', ()=>{
+    document.querySelector('.main-wrapper').classList.add('visible');
+});
+document.querySelectorAll('nav a').forEach(link=>{
+    link.addEventListener('click', e=>{
         e.preventDefault();
         const href = link.getAttribute('href');
         document.querySelector('.main-wrapper').classList.remove('visible');
