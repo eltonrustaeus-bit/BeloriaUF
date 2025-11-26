@@ -34,17 +34,23 @@
     transition:0.3s;
   }
   nav a:hover { color:#B79D46; }
+
+  /* -------------------------- */
+  /* NY BILDSTYLING (MINDRE + OUTLINE) */
+  /* -------------------------- */
   .hero {
     text-align:center;
     padding:40px 10px;
   }
   .hero img {
-    max-width:400px;
-    width:90%;
+    width:280px;               /* Mindre bild */
     border-radius:12px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.5);
-    margin-bottom:20px;
+    border:3px solid #B79D46;  /* Guld-outline */
+    box-shadow:0 6px 18px rgba(0,0,0,0.45);
+    margin-bottom:25px;
   }
+  /* -------------------------- */
+
   .hero h1 {
     font-family:'Playfair Display', serif;
     font-size:32px;
@@ -83,7 +89,7 @@
   }
 
   @media(max-width:768px){
-    .hero img { max-width:90%; }
+    .hero img { width:230px; } /* Mindre på mobil */
     .hero h1 { font-size:28px; }
     .price { font-size:20px; }
   }
@@ -101,7 +107,7 @@
 </header>
 
 <section class="hero">
-  <img src="images/hero1.jpg" alt="Beloria Original">
+  <img src="images/hero1.jpg" alt="Beloria Produkt">
   <h1>PRODUKT</h1>
   <p>Minimalistiskt och elegant datafodral i premiumkvalitet, skapat med fokus på design och funktion.</p>
   <p class="price">Pris: 200 kr ink. frakt</p>
