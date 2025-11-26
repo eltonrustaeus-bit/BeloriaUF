@@ -6,28 +6,26 @@
 <title>Produkter – Beloria UF</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  body {
-    font-family:'Libre Baskerville', serif;
+  html, body {
     margin:0;
     padding:0;
+    height:100vh;
+    overflow:hidden;
+    font-family:'Libre Baskerville', serif;
     background:#000;
     color:#fff;
     display:flex;
     flex-direction:column;
-    align-items:center;
-    height:100vh;
-    overflow:hidden; /* Ingen scroll */
   }
 
-  /* Header / Meny */
+  /* Header */
   header {
-    width:100%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 8%;
+    padding:15px 8%;
     border-bottom:1px solid #B79D46;
-    box-sizing:border-box;
+    flex:0 0 auto;
   }
   .logo {
     font-family:'Playfair Display', serif;
@@ -44,46 +42,44 @@
   }
   nav a:hover { color:#B79D46; }
 
-  /* Produkt-sektion */
-  .product-section {
-    flex:1;
+  /* Hero / produkt */
+  .hero {
+    flex:1 1 auto;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:20px;
-    width:100%;
-    box-sizing:border-box;
+    padding:0 10px;
   }
-  .product-img {
-    width:350px;
-    max-width:90%;
-    border:3px solid #B79D46;
+  .hero img {
+    width:220px;               /* Mindre bild */
     border-radius:12px;
-    box-shadow:0 8px 20px rgba(183,157,70,0.5);
-    margin-bottom:20px;
+    border:3px solid #B79D46;  /* Guld-outline */
+    box-shadow:0 6px 20px rgba(0,0,0,0.5);
+    margin-bottom:30px;        /* Luft mellan bild och rubrik */
   }
-  .product-title {
+  .hero h1 {
     font-family:'Playfair Display', serif;
-    font-size:32px;
-    color:#B79D46;
-    margin-bottom:12px;
-  }
-  .product-desc {
-    font-size:18px;
-    color:#ddd;
-    max-width:500px;
+    font-size:30px;
     margin-bottom:20px;
+    color:#B79D46;
+  }
+  .hero p {
+    font-size:17px;
+    color:#ddd;
+    margin-bottom:15px;
+    max-width:480px;
+    line-height:1.6;
   }
   .price {
     font-size:22px;
     color:#B79D46;
-    margin-bottom:20px;
+    margin-bottom:25px;
   }
   .btn {
     display:inline-block;
-    padding:14px 30px;
+    padding:12px 28px;
     background:#B79D46;
     color:#000;
     border-radius:8px;
@@ -94,18 +90,21 @@
   }
   .btn:hover { opacity:0.85; transform:translateY(-2px); }
 
+  /* Footer */
   footer {
+    flex:0 0 auto;
     text-align:center;
-    padding:20px;
+    padding:15px 0;
     border-top:1px solid #B79D46;
     font-size:14px;
-    color:#aaa;
+    color:#fff;
   }
 
+  /* Responsivt */
   @media(max-width:768px){
-    .product-title { font-size:28px; }
-    .product-desc { font-size:16px; }
-    .price { font-size:20px; }
+    .hero img { width:180px; }
+    .hero h1 { font-size:26px; }
+    .hero p, .price { font-size:15px; }
   }
 </style>
 </head>
@@ -115,17 +114,16 @@
   <div class="logo">Beloria UF</div>
   <nav>
     <a href="index.html">Hem</a>
+    <a href="om-oss.html">Om oss</a>
     <a href="produkter.html">Produkter</a>
-    <a href="omoss.html">Om oss</a>
-    <a href="kontakt.html">Kontakt</a>
   </nav>
 </header>
 
-<section class="product-section">
-  <img src="images/hero1.jpg" alt="Beloria Produkt" class="product-img">
-  <div class="product-title">Beloria Original</div>
-  <div class="product-desc">Minimalistiskt och elegant datafodral i premiumkvalitet, designat med fokus på funktion och stil.</div>
-  <div class="price">Pris: 200 kr ink. frakt</div>
+<section class="hero">
+  <img src="images/hero1.jpg" alt="Beloria Produkt">
+  <h1>Minimalistiskt Datafodral</h1>
+  <p>Elegant och stilrent datafodral i premiumkvalitet, skapat med fokus på design och funktion.</p>
+  <p class="price">Pris: 200 kr inkl. frakt</p>
   <a href="#" class="btn">Köp nu</a>
 </section>
 
