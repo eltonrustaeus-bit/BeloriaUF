@@ -7,69 +7,100 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <style>
 html, body {
-  margin:0; padding:0; height:100vh;
+  margin:0;
+  padding:0;
+  height:100vh;
   font-family:'Libre Baskerville', serif;
-  background:#000; color:#fff;
-  display:flex; flex-direction:column;
+  background:#000;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
   overflow:hidden;
-  text-align:center;
 }
 
 /* Header / Menybar */
 header {
-  display:flex; justify-content:space-between; align-items:center;
-  padding:15px 8%; border-bottom:1px solid #B79D46; flex:0 0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 8%;
+  border-bottom:1px solid #B79D46;
+  flex:0 0 auto;
+  background:#000;
+  box-sizing:border-box;
 }
 .logo {
-  font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#B79D46;
+  font-family:'Playfair Display', serif;
+  font-size:26px;
+  font-weight:700;
+  color:#B79D46;
 }
 nav a {
-  margin-left:25px; text-decoration:none; color:#fff; font-weight:600; transition:0.3s;
+  margin-left:20px;
+  text-decoration:none;
+  color:#fff;
+  font-weight:600;
+  transition:0.3s;
 }
 nav a:hover { color:#B79D46; }
 
-/* Main wrapper */
-.main-wrapper {
-  flex:1 1 auto; display:flex; flex-direction:column;
-  justify-content:center; align-items:center; padding:20px;
+/* Hero / bild + text */
+.hero {
+  flex:1 1 auto;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:10px;
 }
-
-/* Logo / hero */
-.logo-container img {
-  width:240px; border:3px solid #B79D46; border-radius:16px;
-  box-shadow:0 0 25px rgba(183,157,70,0.45); margin-bottom:20px;
+.hero img {
+  width:220px;
+  border-radius:12px;
+  border:3px solid #B79D46;
+  box-shadow:0 6px 20px rgba(0,0,0,0.5);
+  margin-bottom:25px;
 }
-
-/* Textinnehåll */
-.content {
-  max-width:600px; line-height:1.6;
-}
-.content h1 {
-  font-family:'Playfair Display', serif; font-size:28px; margin-bottom:12px; color:#B79D46;
-}
-.content p {
-  font-size:16px; color:#ddd; margin-bottom:15px;
-}
-
-/* Extra premium-text under */
-.premium {
-  margin-top:10px;
-  font-size:14px;
+.hero h1 {
+  font-family:'Playfair Display', serif;
+  font-size:28px;
+  margin-bottom:15px;
   color:#B79D46;
-  letter-spacing:0.5px;
 }
+.hero p {
+  font-size:16px;
+  color:#ddd;
+  margin-bottom:15px;
+  max-width:480px;
+  line-height:1.6;
+}
+.btn {
+  display:inline-block;
+  padding:12px 28px;
+  background:#B79D46;
+  color:#000;
+  border-radius:8px;
+  font-weight:700;
+  font-size:16px;
+  text-decoration:none;
+  transition:0.3s;
+}
+.btn:hover { opacity:0.85; transform:translateY(-2px); }
 
 /* Footer */
 footer {
-  flex:0 0 auto; text-align:center; padding:15px 0;
-  border-top:1px solid #B79D46; font-size:14px; color:#fff;
+  flex:0 0 auto;
+  text-align:center;
+  padding:15px 0;
+  border-top:1px solid #B79D46;
+  font-size:14px;
+  color:#fff;
 }
 
-/* Responsivt */
 @media(max-width:768px){
-  .logo-container img { width:200px; }
-  .content h1 { font-size:24px; }
-  .content p, .premium { font-size:14px; }
+  .hero img { width:180px; }
+  .hero h1 { font-size:24px; }
+  .hero p { font-size:14px; }
 }
 </style>
 </head>
@@ -84,16 +115,12 @@ footer {
   </nav>
 </header>
 
-<div class="main-wrapper">
-  <div class="logo-container">
-    <img src="images/hero.jpg" alt="Beloria Logotyp">
-  </div>
-  <div class="content">
-    <h1>Minimalistiska och moderna datafodral</h1>
-    <p>Skapade med fokus på kvalitet, funktion och elegant design – Beloria UF levererar premiumprodukter som sticker ut.</p>
-    <p class="premium">Premium Design & Funktionalitet</p>
-  </div>
-</div>
+<section class="hero">
+  <img src="images/hero.jpg" alt="Beloria Produkt">
+  <h1>Minimalistiska och moderna datafodral</h1>
+  <p>Skapade med fokus på kvalitet, funktion och elegant design – Beloria UF levererar premiumprodukter som sticker ut.</p>
+  <a href="produkter.html" class="btn">Se produkterna</a>
+</section>
 
 <footer>
   Beloria UF © 2025 – Premium Design & Funktionalitet
