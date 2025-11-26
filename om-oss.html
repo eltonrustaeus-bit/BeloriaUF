@@ -18,14 +18,17 @@ header {
     display:flex; justify-content:space-between; align-items:center;
     padding:1vh 8%; border-bottom:1px solid #B79D46; background:#000;
 }
-.logo { font-family:'Playfair Display', serif; font-size:3vh; font-weight:700; color:#B79D46; }
+.logo {
+    font-family:'Playfair Display', serif;
+    font-size:3vh; font-weight:700; color:#B79D46;
+}
 nav a {
     margin-left:3vw; text-decoration:none; color:#fff;
     font-weight:600; font-size:2vh; transition:0.3s;
 }
 nav a:hover { color:#B79D46; }
 
-/* PAGE ANIMATION */
+/* PAGE FADE */
 .main-wrapper {
     flex:1; display:flex; flex-direction:column;
     justify-content:center; align-items:center; text-align:center;
@@ -34,24 +37,24 @@ nav a:hover { color:#B79D46; }
 }
 .visible { opacity:1; transform:translateY(0); }
 
-/* IMAGE ANIMATION (ZOOM + FADE) */
+/* IMAGE INITIAL STATE (always before animation) */
 .logo-container img {
     width:20vw; max-width:260px; min-width:170px;
     border-radius:1.2vh; border:0.3vh solid #B79D46;
     box-shadow:0 0.5vh 2vh rgba(183,157,70,0.45);
 
-    /* important */
     opacity:0;
-    transform:scale(1.1);
-    animation: fadeZoom 1.3s ease forwards;
-    animation-delay:0.3s;
-}
-@keyframes fadeZoom {
-    from { opacity:0; transform:scale(1.1); }
-    to   { opacity:1; transform:scale(1); }
+    transform:scale(1.12);
+    transition:opacity 1s ease, transform 1.2s ease;
 }
 
-/* TEXT */
+/* APPLIED AFTER JS TRIGGERS IT */
+.show-img {
+    opacity:1 !important;
+    transform:scale(1) !important;
+}
+
+/* CONTENT */
 .content h1 {
     font-family:'Playfair Display', serif;
     font-size:3vh; margin-bottom:1vh; margin-top:1vh;
@@ -89,7 +92,7 @@ footer {
 
 <div class="main-wrapper">
     <div class="logo-container">
-        <img src="images/hero2.jpg" alt="Beloria Logotyp">
+        <img id="fadeImg" src="images/hero2.jpg" alt="Beloria Logotyp">
     </div>
 
     <div class="content">
@@ -103,12 +106,19 @@ footer {
 <footer>Beloria UF © 2025 – Premium Design & Funktionalitet</footer>
 
 <script>
-/* PAGE FADE-IN */
+/* FADE IN PAGE */
 window.addEventListener('load', ()=>{
     document.querySelector('.main-wrapper').classList.add('visible');
+
+    /* FORCE start image animation every load */
+    const img = document.getElementById('fadeImg');
+    img.classList.remove('show-img');
+    requestAnimationFrame(()=>{
+        img.classList.add('show-img');
+    });
 });
 
-/* PAGE FADE-OUT WHEN CHANGING MENU */
+/* FADE OUT WHEN CHANGING MENUS */
 document.querySelectorAll('nav a').forEach(link=>{
     link.addEventListener('click', e=>{
         e.preventDefault();
