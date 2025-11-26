@@ -6,72 +6,76 @@
 <title>Beloria UF – Hem</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  html, body { margin:0; padding:0; height:100vh; font-family:'Libre Baskerville', serif; background:#000; color:#fff; overflow:hidden; }
-  body { display:flex; flex-direction:column; }
-
-  /* Header */
-  header {
+html, body {
+    margin:0; padding:0; height:100vh; font-family:'Libre Baskerville', serif;
+    background:#000; color:#fff; overflow:hidden;
+    display:flex; flex-direction:column;
+}
+header {
     display:flex; justify-content:space-between; align-items:center;
-    padding:12px 8%; border-bottom:1px solid #B79D46; background:#000; flex:0 0 auto;
-  }
-  .logo { font-family:'Playfair Display', serif; font-size:24px; font-weight:700; color:#B79D46; }
-  nav a { margin-left:20px; text-decoration:none; color:#fff; font-weight:600; transition:0.3s; }
-  nav a:hover { color:#B79D46; }
+    padding:1vh 8%; border-bottom:1px solid #B79D46; background:#000; flex:0 0 auto;
+}
+.logo { font-family:'Playfair Display', serif; font-size:3vh; font-weight:700; color:#B79D46; }
+nav a { margin-left:3vw; text-decoration:none; color:#fff; font-weight:600; transition:0.3s; font-size:2vh; }
+nav a:hover { color:#B79D46; }
 
-  /* Main hero med animation */
-  .main-wrapper { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:10px; opacity:0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .visible { opacity:1; transform: translateY(0); }
+.main-wrapper {
+    flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center;
+    text-align:center; opacity:0; transform: translateY(2vh); transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.visible { opacity:1; transform: translateY(0); }
 
-  .hero img { width:260px; border-radius:12px; border:3px solid #B79D46; box-shadow:0 6px 20px rgba(0,0,0,0.5); margin-bottom:30px; }
-  .hero h1 { font-family:'Playfair Display', serif; font-size:32px; margin-bottom:20px; color:#B79D46; border-bottom:2px solid #B79D46; padding-bottom:4px; width:fit-content; }
-  .hero p { font-size:16px; color:#ddd; margin-bottom:25px; max-width:480px; line-height:1.6; }
-  .btn { display:inline-block; padding:12px 28px; background:#B79D46; color:#000; border-radius:8px; font-weight:700; font-size:16px; text-decoration:none; transition:0.3s; }
-  .btn:hover { opacity:0.85; transform:translateY(-2px); }
+.hero img { width:20vw; max-width:260px; min-width:180px; border-radius:1.2vh;
+    border:0.3vh solid #B79D46; box-shadow:0 0.5vh 2vh rgba(0,0,0,0.5); margin-bottom:2vh; }
+.hero h1 { font-family:'Playfair Display', serif; font-size:3vh; margin-bottom:1.5vh;
+    color:#B79D46; border-bottom:0.2vh solid #B79D46; padding-bottom:0.5vh; width:fit-content; }
+.hero p { font-size:2vh; color:#ddd; margin-bottom:2vh; max-width:90vw; line-height:1.5; }
+.btn { display:inline-block; padding:1vh 2.5vw; background:#B79D46; color:#000;
+    border-radius:0.8vh; font-weight:700; font-size:2vh; text-decoration:none; transition:0.3s; }
+.btn:hover { opacity:0.85; transform:translateY(-0.5vh); }
 
-  footer { flex:0 0 auto; text-align:center; padding:15px 0; border-top:1px solid #B79D46; font-size:14px; color:#fff; }
+footer { flex:0 0 auto; text-align:center; padding:1vh 0; border-top:1px solid #B79D46;
+    font-size:1.5vh; color:#fff; }
 
-  @media(max-width:768px){
-    .hero img { width:200px; }
-    .hero h1 { font-size:26px; }
-    .hero p { font-size:15px; }
-  }
+@media(max-width:768px){
+    .hero img { width:40vw; }
+    .hero h1 { font-size:3vh; }
+    .hero p { font-size:2vh; }
+}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">Beloria UF</div>
-  <nav>
+<div class="logo">Beloria UF</div>
+<nav>
     <a href="index.html">Hem</a>
     <a href="produkter.html">Produkter</a>
     <a href="om-oss.html">Om oss</a>
-  </nav>
+</nav>
 </header>
 
 <div class="main-wrapper">
-  <div class="hero">
-    <img src="images/hero.jpg" alt="Beloria Produkt">
-    <h1>Minimalistiska och moderna datafodral</h1>
-    <p>Skapade med fokus på kvalitet, funktion och elegant design – Beloria UF levererar premiumprodukter som sticker ut.</p>
-    <a href="produkter.html" class="btn">Se produkterna</a>
-  </div>
+    <div class="hero">
+        <img src="images/hero.jpg" alt="Beloria Produkt">
+        <h1>Minimalistiska och moderna datafodral</h1>
+        <p>Skapade med fokus på kvalitet, funktion och elegant design – Beloria UF levererar premiumprodukter som sticker ut.</p>
+        <a href="produkter.html" class="btn">Se produkterna</a>
+    </div>
 </div>
 
 <footer>Beloria UF © 2025 – Premium Design & Funktionalitet</footer>
 
 <script>
-  // Fade-in när sidan laddas
-  window.addEventListener('load', ()=>{ document.querySelector('.main-wrapper').classList.add('visible'); });
-
-  // Fade-out vid länk-klick
-  document.querySelectorAll('nav a, .btn').forEach(link => {
+window.addEventListener('load', ()=>{ document.querySelector('.main-wrapper').classList.add('visible'); });
+document.querySelectorAll('nav a, .btn').forEach(link => {
     link.addEventListener('click', e => {
-      e.preventDefault();
-      const href = link.getAttribute('href');
-      document.querySelector('.main-wrapper').classList.remove('visible');
-      setTimeout(()=>{ window.location.href = href; }, 400);
+        e.preventDefault();
+        const href = link.getAttribute('href');
+        document.querySelector('.main-wrapper').classList.remove('visible');
+        setTimeout(()=>{ window.location.href = href; }, 400);
     });
-  });
+});
 </script>
 
 </body>
