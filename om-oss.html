@@ -6,138 +6,69 @@
 <title>Om oss – Beloria UF</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  html, body {
-    margin:0;
-    padding:0;
-    height:100vh;
-    font-family:'Libre Baskerville', serif;
-    background:#000;
-    color:#fff;
-    display:flex;
-    flex-direction:column;
-    overflow:hidden;
-  }
+html, body { margin:0; padding:0; height:100vh; font-family:'Libre Baskerville', serif;
+background:#000; color:#fff; overflow:hidden; display:flex; flex-direction:column; }
+header { display:flex; justify-content:space-between; align-items:center; padding:1vh 8%;
+border-bottom:1px solid #B79D46; background:#000; flex:0 0 auto; }
+.logo { font-family:'Playfair Display', serif; font-size:3vh; font-weight:700; color:#B79D46; }
+nav a { margin-left:3vw; text-decoration:none; color:#fff; font-weight:600; transition:0.3s; font-size:2vh; }
+nav a:hover { color:#B79D46; }
 
-  /* Header / Menybar */
-  header {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:12px 8%;
-    border-bottom:1px solid #B79D46;
-    flex:0 0 auto;
-    background:#000;
-  }
+.main-wrapper { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center;
+text-align:center; opacity:0; transform: translateY(2vh); transition: opacity 0.6s ease, transform 0.6s ease; }
+.visible { opacity:1; transform: translateY(0); }
 
-  .logo {
-    font-family:'Playfair Display', serif;
-    font-size:24px;
-    font-weight:700;
-    color:#B79D46;
-  }
+.logo-container img { width:20vw; max-width:260px; min-width:180px; border-radius:1.2vh;
+border:0.3vh solid #B79D46; box-shadow:0 0.5vh 2vh rgba(183,157,70,0.45); margin-bottom:2vh; }
+.content h1 { font-family:'Playfair Display', serif; font-size:3vh; margin-bottom:1vh;
+color:#B79D46; border-bottom:0.2vh solid #B79D46; padding-bottom:0.5vh; width:fit-content; }
+.content p { font-size:2vh; color:#ddd; margin-bottom:1.5vh; max-width:90vw; line-height:1.5; }
 
-  nav a {
-    margin-left:20px;
-    text-decoration:none;
-    color:#fff;
-    font-weight:600;
-    transition:0.3s;
-  }
-  nav a:hover { color:#B79D46; }
+footer { flex:0 0 auto; text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-size:1.5vh; color:#fff; }
 
-  /* Main content */
-  .main-wrapper {
-    flex:1;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:10px;
-  }
-
-  .logo-container img {
-    width:140px;
-    max-height:140px;
-    border-radius:12px;
-    border:3px solid #B79D46;
-    box-shadow:0 6px 20px rgba(0,0,0,0.5);
-    margin-bottom:15px;
-  }
-
-  .content h1 {
-    font-family:'Playfair Display', serif;
-    font-size:20px;
-    margin-bottom:10px;
-    color:#B79D46;
-    border-bottom:2px solid #B79D46;
-    padding-bottom:4px;
-    width:fit-content;
-  }
-
-  .content p {
-    font-size:13px;
-    color:#ddd;
-    margin-bottom:10px;
-    max-width:300px;
-    line-height:1.4;
-  }
-
-  /* Footer */
-  footer {
-    flex:0 0 auto;
-    text-align:center;
-    padding:10px 0;
-    border-top:1px solid #B79D46;
-    font-size:12px;
-    color:#fff;
-  }
-
-  /* Responsivt */
-  @media(max-width:1024px){
-    .logo-container img { width:120px; max-height:120px; }
-    .content h1 { font-size:18px; }
-    .content p { font-size:12px; max-width:250px; }
-    .logo { font-size:22px; }
-  }
-
-  @media(max-width:768px){
-    header { flex-direction:column; align-items:center; }
-    nav { margin-top:8px; }
-    nav a { margin:0 10px; font-size:12px; }
-    .logo-container img { width:100px; max-height:100px; }
-    .content h1 { font-size:16px; }
-    .content p { font-size:11px; max-width:200px; }
-  }
+@media(max-width:768px){
+    .logo-container img { width:40vw; }
+    .content h1 { font-size:3vh; }
+    .content p { font-size:2vh; }
+}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">Beloria UF</div>
-  <nav>
+<div class="logo">Beloria UF</div>
+<nav>
     <a href="index.html">Hem</a>
     <a href="produkter.html">Produkter</a>
     <a href="om-oss.html">Om oss</a>
-  </nav>
+</nav>
 </header>
 
 <div class="main-wrapper">
-  <div class="logo-container">
-    <img src="images/hero2.jpg" alt="Beloria Logotyp">
-  </div>
-
-  <div class="content">
-    <h1>Om Beloria</h1>
-    <p>Beloria UF är ett svenskt UF-företag som skapar innovativa och eleganta datorfodral.</p>
-    <p>Vårt signaturprodukt är ett minimalistiskt fodral med inbyggd musmatta, designat för både stil och funktion.</p>
-    <p>Vi fokuserar på premiumkvalitet, hållbara material och smarta lösningar för dagens digitala livsstil.</p>
-  </div>
+    <div class="logo-container">
+        <img src="images/hero2.jpg" alt="Beloria Logotyp">
+    </div>
+    <div class="content">
+        <h1>Om Beloria</h1>
+        <p>Beloria UF är ett svenskt UF-företag som skapar innovativa och eleganta datorfodral.</p>
+        <p>Vårt signaturprodukt är ett minimalistiskt fodral med inbyggd musmatta, designat för både stil och funktion.</p>
+        <p>Vi fokuserar på premiumkvalitet, hållbara material och smarta lösningar för dagens digitala livsstil.</p>
+    </div>
 </div>
 
-<footer>
-  Beloria UF © 2025 – Premium Design & Funktionalitet
-</footer>
+<footer>Beloria UF © 2025 – Premium Design & Funktionalitet</footer>
+
+<script>
+window.addEventListener('load', ()=>{ document.querySelector('.main-wrapper').classList.add('visible'); });
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const href = link.getAttribute('href');
+        document.querySelector('.main-wrapper').classList.remove('visible');
+        setTimeout(()=>{ window.location.href = href; }, 400);
+    });
+});
+</script>
 
 </body>
 </html>
