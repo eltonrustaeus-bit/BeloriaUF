@@ -9,8 +9,8 @@
   html, body {
     margin:0;
     padding:0;
-    height:100vh; /* Hela viewport */
-    overflow:hidden; /* Ingen scroll */
+    height:100vh;
+    overflow:hidden;
     font-family:'Libre Baskerville', serif;
     background:#000;
     color:#fff;
@@ -18,13 +18,14 @@
     flex-direction:column;
   }
 
+  /* Header */
   header {
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:15px 8%;
     border-bottom:1px solid #B79D46;
-    flex:0 0 auto; /* Tar ej extra utrymme */
+    flex:0 0 auto;
   }
   .logo {
     font-family:'Playfair Display', serif;
@@ -43,7 +44,7 @@
 
   /* Hero / produkt */
   .hero {
-    flex:1 1 auto; /* Fyller kvarvarande utrymme */
+    flex:1 1 auto;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -52,31 +53,33 @@
     padding:0 10px;
   }
   .hero img {
-    width:280px;
+    width:220px;               /* Mindre bild */
     border-radius:12px;
-    border:3px solid #B79D46;
-    box-shadow:0 6px 18px rgba(0,0,0,0.45);
-    margin-bottom:20px;
+    border:3px solid #B79D46;  /* Guld-outline */
+    box-shadow:0 6px 20px rgba(0,0,0,0.5);
+    margin-bottom:30px;        /* Luft mellan bild och rubrik */
   }
   .hero h1 {
     font-family:'Playfair Display', serif;
-    font-size:32px;
-    margin-bottom:10px;
+    font-size:30px;
+    margin-bottom:20px;
     color:#B79D46;
   }
   .hero p {
-    font-size:18px;
+    font-size:17px;
     color:#ddd;
     margin-bottom:15px;
+    max-width:480px;
+    line-height:1.6;
   }
   .price {
     font-size:22px;
     color:#B79D46;
-    margin-bottom:20px;
+    margin-bottom:25px;
   }
   .btn {
     display:inline-block;
-    padding:12px 26px;
+    padding:12px 28px;
     background:#B79D46;
     color:#000;
     border-radius:8px;
@@ -87,6 +90,7 @@
   }
   .btn:hover { opacity:0.85; transform:translateY(-2px); }
 
+  /* Footer */
   footer {
     flex:0 0 auto;
     text-align:center;
@@ -96,10 +100,11 @@
     color:#fff;
   }
 
+  /* Responsivt */
   @media(max-width:768px){
-    .hero img { width:200px; }
+    .hero img { width:180px; }
     .hero h1 { font-size:26px; }
-    .hero p, .price { font-size:16px; }
+    .hero p, .price { font-size:15px; }
   }
 </style>
 </head>
@@ -116,9 +121,9 @@
 
 <section class="hero">
   <img src="images/hero1.jpg" alt="Beloria Produkt">
-  <h1>PRODUKT</h1>
-  <p>Minimalistiskt och elegant datafodral i premiumkvalitet, skapat med fokus på design och funktion.</p>
-  <p class="price">Pris: 200 kr ink. frakt</p>
+  <h1>Minimalistiskt Datafodral</h1>
+  <p>Elegant och stilrent datafodral i premiumkvalitet, skapat med fokus på design och funktion.</p>
+  <p class="price">Pris: 200 kr inkl. frakt</p>
   <a href="#" class="btn">Köp nu</a>
 </section>
 
