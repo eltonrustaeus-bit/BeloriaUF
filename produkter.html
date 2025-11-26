@@ -6,26 +6,23 @@
 <title>Produkter – Beloria UF</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  html, body {
+  body {
     margin:0;
     padding:0;
-    height:100vh;
-    overflow:hidden;
     font-family:'Libre Baskerville', serif;
     background:#000;
     color:#fff;
     display:flex;
     flex-direction:column;
+    min-height:100vh;
   }
 
-  /* Header */
   header {
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:15px 8%;
     border-bottom:1px solid #B79D46;
-    flex:0 0 auto;
   }
   .logo {
     font-family:'Playfair Display', serif;
@@ -42,40 +39,39 @@
   }
   nav a:hover { color:#B79D46; }
 
-  /* Hero / produkt */
   .hero {
-    flex:1 1 auto;
+    flex:1;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:0 10px;
+    padding:30px 10px;
   }
   .hero img {
-    width:220px;               /* Mindre bild */
+    width:160px;
     border-radius:12px;
-    border:3px solid #B79D46;  /* Guld-outline */
+    border:3px solid #B79D46;
     box-shadow:0 6px 20px rgba(0,0,0,0.5);
-    margin-bottom:30px;        /* Luft mellan bild och rubrik */
+    margin-bottom:25px;
   }
   .hero h1 {
     font-family:'Playfair Display', serif;
-    font-size:30px;
-    margin-bottom:20px;
+    font-size:24px;
+    margin-bottom:15px;
     color:#B79D46;
   }
   .hero p {
-    font-size:17px;
+    font-size:15px;
     color:#ddd;
-    margin-bottom:15px;
-    max-width:480px;
-    line-height:1.6;
+    margin-bottom:10px;
+    max-width:450px;
+    line-height:1.5;
   }
   .price {
-    font-size:22px;
+    font-size:20px;
     color:#B79D46;
-    margin-bottom:25px;
+    margin-bottom:20px;
   }
   .btn {
     display:inline-block;
@@ -90,9 +86,7 @@
   }
   .btn:hover { opacity:0.85; transform:translateY(-2px); }
 
-  /* Footer */
   footer {
-    flex:0 0 auto;
     text-align:center;
     padding:15px 0;
     border-top:1px solid #B79D46;
@@ -100,11 +94,12 @@
     color:#fff;
   }
 
-  /* Responsivt */
   @media(max-width:768px){
-    .hero img { width:180px; }
-    .hero h1 { font-size:26px; }
-    .hero p, .price { font-size:15px; }
+    .hero img { width:140px; }
+    .hero h1 { font-size:22px; }
+    .hero p { font-size:14px; max-width:300px; }
+    .price { font-size:18px; }
+    .btn { padding:10px 22px; font-size:14px; }
   }
 </style>
 </head>
