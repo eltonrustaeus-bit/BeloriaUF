@@ -26,12 +26,23 @@ nav a:hover { color:#B79D46; }
 
 /* BILDER OCH PRODUKTER */
 .image-container { display:flex; justify-content:center; align-items:center; gap:2vw; margin-bottom:2vh; flex-wrap:wrap; }
-.product-card { display:flex; flex-direction:column; align-items:center; gap:0.8vh; }
+.product-card { display:flex; flex-direction:column; align-items:center; gap:1vh; }
 .product-img { width:16vw; max-width:150px; min-width:120px; border:0.35vh solid #B79D46; border-radius:1.4vh; box-shadow:0 0.5vh 2vh rgba(183,157,70,0.45); opacity:0; transform:scale(1.1); transition:opacity 1s ease, transform 1.1s ease; }
 .show-img { opacity:1 !important; transform:scale(1) !important; }
 
-/* PRIS OCH TEXT */
-.price { color:#B79D46; font-size:2vh; font-weight:700; margin-top:0.5vh; }
+/* KÖP + PRIS */
+.buy-price-container {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    gap:0.6vh;
+    margin-top:0.5vh;
+}
+.price { color:#B79D46; font-size:2vh; font-weight:700; }
+.buy-btn { background:#B79D46; color:#000; border:none; padding:0.8vh 2vw; border-radius:1vh; font-size:1.8vh; font-weight:700; cursor:pointer; transition:0.3s; }
+.buy-btn:hover { background:#fff; color:#B79D46; }
+
+/* TEXT */
 h1 { font-size:4vh; color:#B79D46; font-family:'Playfair Display', serif; font-weight:700; margin-bottom:1vh; }
 p { font-size:2vh; color:#ddd; max-width:70vw; line-height:1.45; margin-bottom:1.5vh; }
 
@@ -40,14 +51,10 @@ p { font-size:2vh; color:#ddd; max-width:70vw; line-height:1.45; margin-bottom:1
 .feature { border:0.25vh solid #B79D46; padding:0.8vh 1.2vw; border-radius:1vh; font-size:1.8vh; opacity:0.85; }
 .premium { font-size:2vh; color:#B79D46; opacity:0.9; }
 
-/* KÖPKNAPPAR */
-.buy-btn { background:#B79D46; color:#000; border:none; padding:0.8vh 2vw; border-radius:1vh; font-size:1.8vh; font-weight:700; cursor:pointer; transition:0.3s; }
-.buy-btn:hover { background:#fff; color:#B79D46; }
-
 /* FOOTER */
 footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-size:1.6vh; }
 
-/* MOBIL: samma layout som desktop, bara något större bilder */
+/* MOBIL: samma layout som desktop, bilder lite större */
 @media(max-width:768px){
     .product-img { width:25vw; max-width:120px; min-width:100px; }
     h1 { font-size:3.5vh; }
@@ -72,13 +79,17 @@ footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-si
     <div class="image-container">
         <div class="product-card">
             <img id="product1" class="product-img" src="images/hero1.jpg" alt="Produkt 1">
-            <button class="buy-btn">Köp</button>
-            <div class="price">200kr inkl. frakt</div>
+            <div class="buy-price-container">
+                <button class="buy-btn">Köp</button>
+                <div class="price">200kr inkl. frakt</div>
+            </div>
         </div>
         <div class="product-card">
             <img id="product2" class="product-img" src="images/hero3.jpg" alt="Produkt 2">
-            <button class="buy-btn">Köp</button>
-            <div class="price">200kr inkl. frakt</div>
+            <div class="buy-price-container">
+                <button class="buy-btn">Köp</button>
+                <div class="price">200kr inkl. frakt</div>
+            </div>
         </div>
     </div>
 
