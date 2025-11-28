@@ -5,17 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Beloria UF – Produkter</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-
 <style>
-/* Grundinställningar */
 html, body {
-    margin:0; padding:0;
+    margin:0; padding:0; height:100vh;
     background:#000; color:#fff;
     font-family:'Libre Baskerville', serif;
-    min-height:100%;
+    overflow-x:hidden;
+    display:flex; flex-direction:column;
 }
 
-/* MENY – perfekt på mobil & dator */
+/* MENY – kompatibel med Safari */
 header {
     display:flex;
     justify-content:space-between;
@@ -24,95 +23,35 @@ header {
     background:#000;
     border-bottom:1px solid #B79D46;
 }
-.logo {
-    font-family:'Playfair Display', serif;
-    font-size:3.4vh;
-    font-weight:700;
-    color:#B79D46;
-}
-nav {
-    display:flex;
-    flex-direction:row;
-    gap:4vw;
-}
+.logo { font-family:'Playfair Display', serif; font-size:3.4vh; font-weight:700; color:#B79D46; }
+nav { display:flex; flex-direction:row; flex-wrap:wrap; }
 nav a {
-    text-decoration:none;
-    color:#fff;
-    font-size:2.2vh;
-    font-weight:600;
-    transition:0.3s;
+    text-decoration:none; color:#fff; font-size:2.2vh; font-weight:600;
+    padding:0.5vh 1vw; margin-right:1.5vw; white-space:nowrap; transition:0.3s;
 }
+nav a:last-child { margin-right:0; }
 nav a:hover { color:#B79D46; }
+@media(max-width:768px){ nav a { font-size:2vh; margin-right:1vw; padding:0.5vh 0.8vw; } }
 
 /* SIDAN */
-.main-wrapper {
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    align-items:center;
-    text-align:center;
-    padding:3vh 2vw;
-    gap:3vh;
-}
+.main-wrapper { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:3vh; opacity:0; transform:translateY(2vh); transition:opacity 0.8s ease, transform 0.8s ease; }
+.visible { opacity:1; transform:translateY(0); }
 
-/* PRODUKTKORT */
-.image-container {
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-    gap:3vw;
-    flex-wrap:wrap;
-    width:100%;
-}
-.product-card {
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:0.8vh;
-    flex:1 1 140px; /* flexibla kort */
-    max-width:180px;
-}
-.product-img {
-    width:100%;
-    border:0.35vh solid #B79D46;
-    border-radius:1.4vh;
-    box-shadow:0 0.5vh 2vh rgba(183,157,70,0.45);
-}
+/* PRODUKTER */
+.image-container { display:flex; justify-content:center; align-items:center; gap:4vw; flex-wrap:wrap; }
+.product-card { display:flex; flex-direction:column; align-items:center; gap:1vh; }
+.product-img { width:18vw; max-width:180px; min-width:130px; border:0.35vh solid #B79D46; border-radius:1.4vh; box-shadow:0 0.5vh 2vh rgba(183,157,70,0.45); }
+.buy-price-container { display:flex; flex-direction:column; align-items:center; gap:0.5vh; margin-top:0.5vh; }
+.price { color:#B79D46; font-size:2.1vh; font-weight:700; }
+.buy-btn { background:#B79D46; color:#000; border:none; padding:0.8vh 2vw; border-radius:1vh; font-size:1.9vh; font-weight:700; cursor:pointer; transition:0.3s; }
+.buy-btn:hover { background:#fff; color:#B79D46; }
 
-/* KÖP + PRIS */
-.buy-price-container {
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:0.5vh;
-}
-.price {
-    color:#B79D46;
-    font-size:2vh;
-    font-weight:700;
-}
-.buy-btn {
-    background:#B79D46;
-    color:#000;
-    border:none;
-    padding:0.7vh 2vw;
-    border-radius:1vh;
-    font-size:1.8vh;
-    font-weight:700;
-    cursor:pointer;
-    transition:0.3s;
-}
-.buy-btn:hover {
-    background:#fff;
-    color:#B79D46;
-}
+/* TEXT */
+h1 { font-size:4vh; color:#B79D46; font-family:'Playfair Display', serif; font-weight:700; }
+p { font-size:2vh; color:#ddd; max-width:70vw; line-height:1.45; }
 
-/* SIDAN TEXT */
-h1 { font-size:4vh; color:#B79D46; font-family:'Playfair Display', serif; font-weight:700; margin-bottom:1vh; }
-p { font-size:2vh; color:#ddd; max-width:700px; line-height:1.45; margin-bottom:1.5vh; }
-
-/* FEATURE BOXAR */
-.feature-box { display:flex; justify-content:center; gap:1vw; margin-bottom:1.5vh; flex-wrap:wrap; }
+/* FEATURE */
+.feature-box { display:flex; justify-content:center; gap:1vw; margin-bottom:1.5vh; }
 .feature { border:0.25vh solid #B79D46; padding:0.8vh 1.2vw; border-radius:1vh; font-size:1.8vh; opacity:0.85; }
 .premium { font-size:2vh; color:#B79D46; opacity:0.9; }
 
@@ -121,18 +60,16 @@ footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-si
 
 /* MOBILANPASSNING */
 @media(max-width:768px){
-    .image-container { gap:4vw; }
-    .product-card { max-width:45%; }
-    .product-img { width:100%; height:auto; }
+    .product-img { width:35vw; max-width:160px; }
     h1 { font-size:3.8vh; }
-    p { font-size:1.8vh; }
-    .price { font-size:2vh; }
+    p { font-size:1.9vh; max-width:85vw; }
+    .feature { font-size:1.6vh; padding:0.6vh 1vw; }
+    .price { font-size:1.8vh; }
     .buy-btn { font-size:1.7vh; padding:0.6vh 1.5vw; }
-    .feature { font-size:1.6vh; padding:0.5vh 1vw; }
+    .image-container { gap:3vw; }
 }
 </style>
 </head>
-
 <body>
 <header>
     <div class="logo">Beloria UF</div>
@@ -144,11 +81,8 @@ footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-si
 </header>
 
 <div class="main-wrapper">
-
     <h1>Våra Produkter</h1>
-
     <div class="image-container">
-
         <div class="product-card">
             <img src="images/hero1.jpg" class="product-img" alt="Produkt 1">
             <div class="buy-price-container">
@@ -156,7 +90,6 @@ footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-si
                 <div class="price">200 kr – inklusive frakt</div>
             </div>
         </div>
-
         <div class="product-card">
             <img src="images/hero3.jpg" class="product-img" alt="Produkt 2">
             <div class="buy-price-container">
@@ -164,8 +97,13 @@ footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-si
                 <div class="price">200 kr – inklusive frakt</div>
             </div>
         </div>
-
     </div>
+
+    <p>
+        Vårt exklusiva datorfodral med inbyggd musmatta.  
+        Perfekt för elever, entreprenörer och kreativa användare.  
+        Vi har både svart och grått att välja på.
+    </p>
 
     <div class="feature-box">
         <div class="feature">Premiumkvalitet</div>
@@ -175,6 +113,12 @@ footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-si
     <div class="premium">Premium Design & Innovation</div>
 </div>
 
-<footer>Beloria UF © 2025 – Premium Design</footer>
+<footer>Beloria UF © 2025 – Premium Design & Innovation</footer>
+
+<script>
+window.addEventListener('load', ()=>{
+    document.querySelector('.main-wrapper').classList.add('visible');
+});
+</script>
 </body>
 </html>
