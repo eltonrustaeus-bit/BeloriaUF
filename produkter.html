@@ -7,11 +7,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
+/* Grundinställningar */
 html, body {
     margin:0; padding:0;
     background:#000; color:#fff;
     font-family:'Libre Baskerville', serif;
-    display:flex; flex-direction:column;
+    min-height:100%;
 }
 
 /* MENY – perfekt på mobil & dator */
@@ -19,7 +20,7 @@ header {
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:2vh 8%;
+    padding:2vh 5%;
     background:#000;
     border-bottom:1px solid #B79D46;
 }
@@ -42,21 +43,16 @@ nav a {
     transition:0.3s;
 }
 nav a:hover { color:#B79D46; }
-@media(max-width:768px){
-    nav { gap:6vw; }
-    nav a { font-size:2.1vh; }
-}
 
 /* SIDAN */
 .main-wrapper {
-    flex:1;
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
     align-items:center;
     text-align:center;
-    gap:3vh;
     padding:3vh 2vw;
+    gap:3vh;
 }
 
 /* PRODUKTKORT */
@@ -64,19 +60,20 @@ nav a:hover { color:#B79D46; }
     display:flex;
     justify-content:center;
     align-items:flex-start;
-    gap:4vw;
+    gap:3vw;
     flex-wrap:wrap;
+    width:100%;
 }
 .product-card {
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:1vh;
+    gap:0.8vh;
+    flex:1 1 140px; /* flexibla kort */
+    max-width:180px;
 }
 .product-img {
-    width:18vw;
-    max-width:180px;
-    min-width:130px;
+    width:100%;
     border:0.35vh solid #B79D46;
     border-radius:1.4vh;
     box-shadow:0 0.5vh 2vh rgba(183,157,70,0.45);
@@ -98,7 +95,7 @@ nav a:hover { color:#B79D46; }
     background:#B79D46;
     color:#000;
     border:none;
-    padding:0.8vh 2vw;
+    padding:0.7vh 2vw;
     border-radius:1vh;
     font-size:1.8vh;
     font-weight:700;
@@ -112,7 +109,7 @@ nav a:hover { color:#B79D46; }
 
 /* SIDAN TEXT */
 h1 { font-size:4vh; color:#B79D46; font-family:'Playfair Display', serif; font-weight:700; margin-bottom:1vh; }
-p { font-size:2vh; color:#ddd; max-width:70vw; line-height:1.45; margin-bottom:1.5vh; }
+p { font-size:2vh; color:#ddd; max-width:700px; line-height:1.45; margin-bottom:1.5vh; }
 
 /* FEATURE BOXAR */
 .feature-box { display:flex; justify-content:center; gap:1vw; margin-bottom:1.5vh; flex-wrap:wrap; }
@@ -125,12 +122,13 @@ footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-si
 /* MOBILANPASSNING */
 @media(max-width:768px){
     .image-container { gap:4vw; }
-    .product-img { width:35vw; max-width:160px; }
-    .price { font-size:2vh; }
-    .buy-btn { font-size:1.8vh; padding:0.7vh 2vw; }
+    .product-card { max-width:45%; }
+    .product-img { width:100%; height:auto; }
     h1 { font-size:3.8vh; }
-    p { font-size:1.9vh; max-width:85vw; }
-    .feature { font-size:1.6vh; padding:0.6vh 1vw; }
+    p { font-size:1.8vh; }
+    .price { font-size:2vh; }
+    .buy-btn { font-size:1.7vh; padding:0.6vh 1.5vw; }
+    .feature { font-size:1.6vh; padding:0.5vh 1vw; }
 }
 </style>
 </head>
@@ -178,12 +176,5 @@ footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-si
 </div>
 
 <footer>Beloria UF © 2025 – Premium Design</footer>
-
-<script>
-window.addEventListener('load', ()=>{
-    document.querySelector('.main-wrapper').classList.add('visible');
-});
-</script>
-
 </body>
 </html>
