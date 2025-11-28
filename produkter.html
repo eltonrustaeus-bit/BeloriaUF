@@ -11,128 +11,138 @@ html, body {
     margin:0; padding:0;
     background:#000; color:#fff;
     font-family:'Libre Baskerville', serif;
+    display:flex; flex-direction:column;
 }
 
-/* MENY */
+/* MENY – perfekt på mobil & dator */
 header {
-    width:100%;
-    background:rgba(0,0,0,0.9);
-    padding:16px 0;
     display:flex;
-    justify-content:center;
-    gap:55px;
+    justify-content:space-between;
+    align-items:center;
+    padding:2vh 8%;
+    background:#000;
     border-bottom:1px solid #B79D46;
 }
-header a {
-    color:#fff;
+.logo {
+    font-family:'Playfair Display', serif;
+    font-size:3.4vh;
+    font-weight:700;
+    color:#B79D46;
+}
+nav {
+    display:flex;
+    flex-direction:row;
+    gap:4vw;
+}
+nav a {
     text-decoration:none;
-    font-size:19px;
+    color:#fff;
+    font-size:2.2vh;
     font-weight:600;
     transition:0.3s;
 }
-header a:hover { color:#B79D46; }
-
-/* SIDLAYOUT */
-.main-wrapper {
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    padding:40px 0;
-    gap:32px;
+nav a:hover { color:#B79D46; }
+@media(max-width:768px){
+    nav { gap:6vw; }
+    nav a { font-size:2.1vh; }
 }
 
-/* PRODUKTER */
+/* SIDAN */
+.main-wrapper {
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    text-align:center;
+    gap:3vh;
+    padding:3vh 2vw;
+}
+
+/* PRODUKTKORT */
 .image-container {
     display:flex;
     justify-content:center;
     align-items:flex-start;
-    gap:40px;
+    gap:4vw;
+    flex-wrap:wrap;
 }
-
-/* PRODUKTKORT */
 .product-card {
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:10px;
+    gap:1vh;
 }
-
 .product-img {
-    width:165px;
-    border:3px solid #B79D46;
-    border-radius:12px;
-    box-shadow:0 4px 18px rgba(183,157,70,0.45);
+    width:18vw;
+    max-width:180px;
+    min-width:130px;
+    border:0.35vh solid #B79D46;
+    border-radius:1.4vh;
+    box-shadow:0 0.5vh 2vh rgba(183,157,70,0.45);
 }
 
-/* PRIS + KNAPP */
+/* KÖP + PRIS */
+.buy-price-container {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0.5vh;
+}
 .price {
     color:#B79D46;
-    font-size:17px;
+    font-size:2vh;
     font-weight:700;
-    margin-top:3px;
 }
-
 .buy-btn {
     background:#B79D46;
     color:#000;
     border:none;
-    padding:8px 20px;
-    border-radius:10px;
-    font-size:16px;
+    padding:0.8vh 2vw;
+    border-radius:1vh;
+    font-size:1.8vh;
     font-weight:700;
     cursor:pointer;
     transition:0.3s;
 }
-
 .buy-btn:hover {
     background:#fff;
     color:#B79D46;
 }
 
-/* MOBIL */
+/* SIDAN TEXT */
+h1 { font-size:4vh; color:#B79D46; font-family:'Playfair Display', serif; font-weight:700; margin-bottom:1vh; }
+p { font-size:2vh; color:#ddd; max-width:70vw; line-height:1.45; margin-bottom:1.5vh; }
+
+/* FEATURE BOXAR */
+.feature-box { display:flex; justify-content:center; gap:1vw; margin-bottom:1.5vh; flex-wrap:wrap; }
+.feature { border:0.25vh solid #B79D46; padding:0.8vh 1.2vw; border-radius:1vh; font-size:1.8vh; opacity:0.85; }
+.premium { font-size:2vh; color:#B79D46; opacity:0.9; }
+
+/* FOOTER */
+footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-size:1.6vh; }
+
+/* MOBILANPASSNING */
 @media(max-width:768px){
-
-    header {
-        gap:38px;
-        padding:14px 0;
-    }
-    header a {
-        font-size:17px;
-    }
-
-    .main-wrapper {
-        gap:26px;
-        padding:32px 0;
-    }
-
-    .image-container {
-        gap:22px;
-        transform:scale(1); /* INGEN ZOOM */
-    }
-
-    .product-img {
-        width:140px; /* Lite mindre så båda alltid får plats snyggt */
-    }
-
-    .price {
-        font-size:15px;
-    }
-
-    .buy-btn {
-        font-size:15px;
-        padding:7px 16px;
-    }
+    .image-container { gap:4vw; }
+    .product-img { width:35vw; max-width:160px; }
+    .price { font-size:2vh; }
+    .buy-btn { font-size:1.8vh; padding:0.7vh 2vw; }
+    h1 { font-size:3.8vh; }
+    p { font-size:1.9vh; max-width:85vw; }
+    .feature { font-size:1.6vh; padding:0.6vh 1vw; }
 }
 </style>
 </head>
 
 <body>
-
 <header>
-    <a href="index.html">Hem</a>
-    <a href="produkter.html">Produkter</a>
-    <a href="om-oss.html">Om oss</a>
+    <div class="logo">Beloria UF</div>
+    <nav>
+        <a href="index.html">Hem</a>
+        <a href="produkter.html">Produkter</a>
+        <a href="om-oss.html">Om oss</a>
+    </nav>
 </header>
 
 <div class="main-wrapper">
@@ -143,22 +153,37 @@ header a:hover { color:#B79D46; }
 
         <div class="product-card">
             <img src="images/hero1.jpg" class="product-img" alt="Produkt 1">
-            <div class="price">200 kr – inklusive frakt</div>
-            <button class="buy-btn">Köp</button>
+            <div class="buy-price-container">
+                <button class="buy-btn">Köp</button>
+                <div class="price">200 kr – inklusive frakt</div>
+            </div>
         </div>
 
         <div class="product-card">
             <img src="images/hero3.jpg" class="product-img" alt="Produkt 2">
-            <div class="price">200 kr – inklusive frakt</div>
-            <button class="buy-btn">Köp</button>
+            <div class="buy-price-container">
+                <button class="buy-btn">Köp</button>
+                <div class="price">200 kr – inklusive frakt</div>
+            </div>
         </div>
 
     </div>
+
+    <div class="feature-box">
+        <div class="feature">Premiumkvalitet</div>
+        <div class="feature">Inbyggd musmatta</div>
+    </div>
+
+    <div class="premium">Premium Design & Innovation</div>
 </div>
 
-<footer style="text-align:center; padding:25px 0; color:#777;">
-    Beloria UF © 2025 – Premium Design
-</footer>
+<footer>Beloria UF © 2025 – Premium Design</footer>
+
+<script>
+window.addEventListener('load', ()=>{
+    document.querySelector('.main-wrapper').classList.add('visible');
+});
+</script>
 
 </body>
 </html>
