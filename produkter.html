@@ -25,37 +25,34 @@ nav a:hover { color:#B79D46; }
 .visible { opacity:1; transform:translateY(0); }
 
 /* BILDER */
-.image-container { display:flex; justify-content:center; align-items:center; gap:2vw; flex-wrap:wrap; margin-bottom:2vh; }
+.image-container { display:flex; justify-content:center; align-items:center; gap:2vw; margin-bottom:2vh; }
 .product-card { display:flex; flex-direction:column; align-items:center; gap:1vh; }
-.product-img { width:18vw; max-width:200px; min-width:140px; border:0.35vh solid #B79D46; border-radius:1.4vh; box-shadow:0 0.5vh 2vh rgba(183,157,70,0.45); opacity:0; transform:scale(1.1); transition:opacity 1s ease, transform 1.1s ease; }
+.product-img { width:16vw; max-width:150px; min-width:120px; border:0.35vh solid #B79D46; border-radius:1.4vh; box-shadow:0 0.5vh 2vh rgba(183,157,70,0.45); opacity:0; transform:scale(1.1); transition:opacity 1s ease, transform 1.1s ease; }
 .show-img { opacity:1 !important; transform:scale(1) !important; }
 
 /* TEXT */
 h1 { font-size:4vh; color:#B79D46; font-family:'Playfair Display', serif; font-weight:700; margin-bottom:1vh; }
-p { font-size:2.2vh; color:#ddd; max-width:70vw; line-height:1.45; margin-bottom:1.5vh; }
+p { font-size:2vh; color:#ddd; max-width:70vw; line-height:1.45; margin-bottom:1.5vh; }
 
 /* FEATURE BOXAR */
-.feature-box { display:flex; justify-content:center; gap:1vw; flex-wrap:wrap; margin-bottom:1.5vh; }
-.feature { border:0.25vh solid #B79D46; padding:0.8vh 1.2vw; border-radius:1vh; font-size:2vh; opacity:0.85; }
+.feature-box { display:flex; justify-content:center; gap:1vw; margin-bottom:1.5vh; }
+.feature { border:0.25vh solid #B79D46; padding:0.8vh 1.2vw; border-radius:1vh; font-size:1.8vh; opacity:0.85; }
 .premium { font-size:2vh; color:#B79D46; opacity:0.9; }
 
 /* KÖPKNAPPAR */
-.buy-btn { background:#B79D46; color:#000; border:none; padding:0.8vh 2vw; border-radius:1vh; font-size:2vh; font-weight:700; cursor:pointer; transition:0.3s; }
+.buy-btn { background:#B79D46; color:#000; border:none; padding:0.8vh 2vw; border-radius:1vh; font-size:1.8vh; font-weight:700; cursor:pointer; transition:0.3s; }
 .buy-btn:hover { background:#fff; color:#B79D46; }
 
 /* FOOTER */
 footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-size:1.6vh; }
 
-/* MOBIL */
+/* MOBIL: samma layout som desktop, bara mindre bilder */
 @media(max-width:768px){
-    .image-container { flex-direction:column; gap:2vh; }
-    .product-img { width:50vw; max-width:160px; }
-    h1 { font-size:4vh; }
-    p { font-size:2.3vh; max-width:85vw; }
-    .feature-box { flex-direction:column; gap:1.5vh; }
-    .feature { font-size:1.8vh; padding:1vh 2vw; }
-    .premium { font-size:2vh; }
-    .buy-btn { width:60%; font-size:2vh; }
+    .product-img { width:25vw; max-width:120px; min-width:100px; }
+    h1 { font-size:3.5vh; }
+    p { font-size:1.8vh; max-width:80vw; }
+    .feature { font-size:1.6vh; padding:0.6vh 1vw; }
+    .buy-btn { font-size:1.6vh; padding:0.6vh 1.5vw; }
 }
 </style>
 </head>
@@ -70,7 +67,6 @@ footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-si
 </header>
 
 <div class="main-wrapper">
-    <!-- Hero-bilder bredvid varandra -->
     <div class="image-container">
         <div class="product-card">
             <img id="product1" class="product-img" src="images/hero1.jpg" alt="Produkt 1">
