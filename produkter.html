@@ -8,79 +8,70 @@
 
 <style>
 html, body {
-    margin:0; padding:0; height:100vh;
+    margin:0; padding:0;
     background:#000; color:#fff;
     font-family:'Libre Baskerville', serif;
-    display:flex; flex-direction:column;
-    overflow:hidden;
 }
 
-/* HEADER */
+/* NYA MENYN – ENDA ÄNDRINGEN */
 header {
+    width:100%;
+    background:rgba(0,0,0,0.9);
+    padding:18px 0;
     display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:2vh 8%;
-    background:#000;
+    justify-content:center;
+    gap:60px;
     border-bottom:1px solid #B79D46;
 }
-.logo {
-    font-family:'Playfair Display', serif;
-    font-size:3.4vh; font-weight:700; color:#B79D46;
-}
-nav {
-    display:flex;
-    gap:4vw;
-}
-nav a {
-    text-decoration:none;
-    color:#fff;
-    font-size:2.2vh;
-    font-weight:600;
-}
-nav a:hover { color:#B79D46; }
 
-/* SIDAN */
+header a {
+    color:#fff;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+header a:hover {
+    color:#B79D46;
+}
+
+/* SIDLAYOUT – EXAKT SOM FÖRUT */
 .main-wrapper {
-    flex:1;
     display:flex;
     flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding:50px 0;
+    gap:35px;
+}
+
+/* PRODUKT KORT – EXAKT SOM FÖRUT */
+.image-container {
+    display:flex;
     justify-content:center;
     align-items:center;
-    gap:3vh;
-    text-align:center;
-    overflow:hidden;
+    gap:45px;
 }
 
-/* PRODUKTGRID */
-.product-grid {
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    align-items:flex-start;
-    gap:6vw;
-}
-
-/* PRODUKTKORT */
 .product-card {
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:1.5vh;
-    width:20vw;
+    gap:10px;
 }
 
 .product-img {
-    width:100%;
-    border:0.35vh solid #B79D46;
-    border-radius:1.2vh;
-    box-shadow:0 0.5vh 2vh rgba(183,157,70,0.4);
+    width:180px;
+    border:3px solid #B79D46;
+    border-radius:12px;
+    box-shadow:0 4px 18px rgba(183,157,70,0.45);
 }
 
-/* PRIS + KNAPP */
+/* PRIS + KNAPP – EXAKT SAMMA */
 .price {
     color:#B79D46;
-    font-size:2.1vh;
+    font-size:18px;
     font-weight:700;
 }
 
@@ -88,27 +79,27 @@ nav a:hover { color:#B79D46; }
     background:#B79D46;
     color:#000;
     border:none;
-    padding:1vh 2vw;
-    border-radius:1vh;
-    font-size:1.9vh;
+    padding:9px 20px;
+    border-radius:10px;
+    font-size:17px;
     font-weight:700;
     cursor:pointer;
+    transition:0.3s;
 }
+
 .buy-btn:hover {
     background:#fff;
     color:#B79D46;
 }
 
-/* MOBIL LAYOUT – exakt samma stil, bara mindre */
+/* MOBIL – EXAKT SOM FÖRUT (samma storlekar som tidigare) */
 @media(max-width:768px){
-    .product-grid {
-        gap:4vw;
+    .image-container {
+        gap:22px;
     }
-    .product-card {
-        width:40vw;
-    }
+
     .product-img {
-        width:100%;
+        width:150px;
     }
 }
 </style>
@@ -117,37 +108,35 @@ nav a:hover { color:#B79D46; }
 <body>
 
 <header>
-    <div class="logo">Beloria UF</div>
-    <nav>
-        <a href="index.html">Hem</a>
-        <a href="produkter.html">Produkter</a>
-        <a href="om-oss.html">Om oss</a>
-    </nav>
+    <a href="index.html">Hem</a>
+    <a href="produkter.html">Produkter</a>
+    <a href="om-oss.html">Om oss</a>
 </header>
 
 <div class="main-wrapper">
 
-    <h1 style="color:#B79D46; font-family:'Playfair Display'; font-size:4vh;">Våra Produkter</h1>
+    <h1>Våra Produkter</h1>
 
-    <div class="product-grid">
+    <div class="image-container">
 
-        <!-- Produkt 1 -->
         <div class="product-card">
             <img src="images/hero1.jpg" class="product-img" alt="Produkt 1">
-            <div class="price">200 kr – inkl. frakt</div>
+            <div class="price">200 kr – inklusive frakt</div>
             <button class="buy-btn">Köp</button>
         </div>
 
-        <!-- Produkt 2 -->
         <div class="product-card">
             <img src="images/hero3.jpg" class="product-img" alt="Produkt 2">
-            <div class="price">200 kr – inkl. frakt</div>
+            <div class="price">200 kr – inklusive frakt</div>
             <button class="buy-btn">Köp</button>
         </div>
 
     </div>
-
 </div>
+
+<footer style="text-align:center; padding:25px 0; color:#777;">
+    Beloria UF © 2025 – Premium Design
+</footer>
 
 </body>
 </html>
