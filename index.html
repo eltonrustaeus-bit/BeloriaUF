@@ -7,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* Grundinställningar */
 html, body {
     margin:0; padding:0;
     background:#000; color:#fff;
@@ -15,7 +14,7 @@ html, body {
     min-height:100%;
 }
 
-/* MENY – perfekt på mobil & dator */
+/* MENY – konsekvent på alla enheter */
 header {
     display:flex;
     justify-content:space-between;
@@ -24,50 +23,23 @@ header {
     background:#000;
     border-bottom:1px solid #B79D46;
 }
-.logo {
-    font-family:'Playfair Display', serif;
-    font-size:3.4vh;
-    font-weight:700;
-    color:#B79D46;
-}
-nav {
-    display:flex;
-    flex-direction:row;
-    gap:4vw;
-}
-nav a {
-    text-decoration:none;
-    color:#fff;
-    font-size:2.2vh;
-    font-weight:600;
-    transition:0.3s;
-}
+.logo { font-family:'Playfair Display', serif; font-size:3.4vh; font-weight:700; color:#B79D46; }
+nav { display:flex; flex-direction:row; gap:4vw; }
+nav a { text-decoration:none; color:#fff; font-size:2.2vh; font-weight:600; transition:0.3s; }
 nav a:hover { color:#B79D46; }
 
 /* SIDAN */
 .main-wrapper {
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    align-items:center;
-    text-align:center;
-    padding:3vh 2vw;
-    gap:3vh;
+    display:flex; flex-direction:column; justify-content:flex-start; align-items:center;
+    text-align:center; padding:3vh 2vw; gap:3vh;
 }
 
-/* HERO BILD */
-.hero-img {
-    width:24vw; max-width:330px; min-width:200px;
-    border:0.35vh solid #B79D46;
-    border-radius:1.4vh;
-    box-shadow:0 0.5vh 2vh rgba(183,157,70,0.45);
-}
+/* HERO */
+.hero-img { width:24vw; max-width:330px; min-width:200px; border:0.35vh solid #B79D46; border-radius:1.4vh; box-shadow:0 0.5vh 2vh rgba(183,157,70,0.45); }
 
 /* TEXT */
 h1 { font-size:4vh; color:#B79D46; font-family:'Playfair Display', serif; font-weight:700; margin-top:1vh; }
 p { font-size:2.2vh; color:#ddd; max-width:700px; line-height:1.45; }
-
-/* PREMIUM TEXT */
 .premium { margin-top:2vh; font-size:2vh; color:#B79D46; opacity:0.9; }
 
 /* FOOTER */
@@ -94,20 +66,14 @@ footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-si
 
 <div class="main-wrapper">
     <img id="hero" class="hero-img" src="images/hero2.jpg" alt="Beloria Hero">
-    <h1>Vi gör din vardag lyxigare</h1>
+    <h1>Premium Design för Alla</h1>
     <p>
-        Vi här på Beloria UF skapar stilerna datorfodral med inbyggd musmatta som kombinerar modern stil med smart funktion.
-        Kvalitet, exklusiv känsla och en innovativ lösning – utvecklade för allt från studenter och entreprenörer.
+        Vi här på Beloria UF skapar datorfodral med inbyggd musmatta som kombinerar modern stil med smart funktion.
+        Kvalitet, exklusiv känsla och en innovativ lösning – utvecklade för allt från studenter till entreprenörer.
     </p>
     <div class="premium">Premium Design & Innovation</div>
 </div>
 
 <footer>Beloria UF © 2025 – Premium Design & Innovation</footer>
-
-<script>
-window.addEventListener('load', ()=>{
-    document.querySelector('.main-wrapper').classList.add('visible');
-});
-</script>
 </body>
 </html>
