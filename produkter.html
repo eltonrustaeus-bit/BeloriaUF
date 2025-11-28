@@ -13,47 +13,44 @@ html, body {
     font-family:'Libre Baskerville', serif;
 }
 
-/* NYA MENYN – ENDA ÄNDRINGEN */
+/* MENY */
 header {
     width:100%;
     background:rgba(0,0,0,0.9);
-    padding:18px 0;
+    padding:16px 0;
     display:flex;
     justify-content:center;
-    gap:60px;
+    gap:55px;
     border-bottom:1px solid #B79D46;
 }
-
 header a {
     color:#fff;
     text-decoration:none;
-    font-size:20px;
+    font-size:19px;
     font-weight:600;
     transition:0.3s;
 }
+header a:hover { color:#B79D46; }
 
-header a:hover {
-    color:#B79D46;
-}
-
-/* SIDLAYOUT – EXAKT SOM FÖRUT */
+/* SIDLAYOUT */
 .main-wrapper {
     display:flex;
     flex-direction:column;
     align-items:center;
     text-align:center;
-    padding:50px 0;
-    gap:35px;
+    padding:40px 0;
+    gap:32px;
 }
 
-/* PRODUKT KORT – EXAKT SOM FÖRUT */
+/* PRODUKTER */
 .image-container {
     display:flex;
     justify-content:center;
-    align-items:center;
-    gap:45px;
+    align-items:flex-start;
+    gap:40px;
 }
 
+/* PRODUKTKORT */
 .product-card {
     display:flex;
     flex-direction:column;
@@ -62,26 +59,27 @@ header a:hover {
 }
 
 .product-img {
-    width:180px;
+    width:165px;
     border:3px solid #B79D46;
     border-radius:12px;
     box-shadow:0 4px 18px rgba(183,157,70,0.45);
 }
 
-/* PRIS + KNAPP – EXAKT SAMMA */
+/* PRIS + KNAPP */
 .price {
     color:#B79D46;
-    font-size:18px;
+    font-size:17px;
     font-weight:700;
+    margin-top:3px;
 }
 
 .buy-btn {
     background:#B79D46;
     color:#000;
     border:none;
-    padding:9px 20px;
+    padding:8px 20px;
     border-radius:10px;
-    font-size:17px;
+    font-size:16px;
     font-weight:700;
     cursor:pointer;
     transition:0.3s;
@@ -92,14 +90,38 @@ header a:hover {
     color:#B79D46;
 }
 
-/* MOBIL – EXAKT SOM FÖRUT (samma storlekar som tidigare) */
+/* MOBIL */
 @media(max-width:768px){
+
+    header {
+        gap:38px;
+        padding:14px 0;
+    }
+    header a {
+        font-size:17px;
+    }
+
+    .main-wrapper {
+        gap:26px;
+        padding:32px 0;
+    }
+
     .image-container {
         gap:22px;
+        transform:scale(1); /* INGEN ZOOM */
     }
 
     .product-img {
-        width:150px;
+        width:140px; /* Lite mindre så båda alltid får plats snyggt */
+    }
+
+    .price {
+        font-size:15px;
+    }
+
+    .buy-btn {
+        font-size:15px;
+        padding:7px 16px;
     }
 }
 </style>
