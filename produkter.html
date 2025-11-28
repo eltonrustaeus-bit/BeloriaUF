@@ -24,24 +24,22 @@ nav a:hover { color:#B79D46; }
 .visible { opacity:1; transform:translateY(0); }
 
 /* BILDANIMATION */
-.product-img { width:24vw; max-width:330px; min-width:200px; border:0.35vh solid #B79D46; border-radius:1.4vh; box-shadow:0 0.5vh 2vh rgba(183,157,70,0.45); opacity:0; transform:scale(1.1); transition:opacity 1s ease, transform 1.1s ease; }
+.product-img { width:18vw; max-width:250px; min-width:150px; border:0.35vh solid #B79D46; border-radius:1.4vh; box-shadow:0 0.5vh 2vh rgba(183,157,70,0.45); opacity:0; transform:scale(1.1); transition:opacity 1s ease, transform 1.1s ease; margin-bottom:1.5vh; }
 .show-img { opacity:1 !important; transform:scale(1) !important; }
 
 /* TEXT */
-h1 { margin-top:2vh; font-size:4vh; color:#B79D46; font-family:'Playfair Display', serif; font-weight:700; }
+h1 { margin-top:1vh; font-size:4vh; color:#B79D46; font-family:'Playfair Display', serif; font-weight:700; }
 p { font-size:2.2vh; color:#ddd; max-width:70vw; line-height:1.45; margin-top:1.5vh; }
-.feature-box { margin-top:2vh; display:flex; gap:1vw; }
+.feature-box { margin-top:1.5vh; display:flex; gap:1vw; justify-content:center; flex-wrap:wrap; }
 .feature { border:0.25vh solid #B79D46; padding:0.8vh 1.2vw; border-radius:1vh; font-size:2vh; opacity:0.85; }
-
-/* PREMIUM TEXT */
-.premium { margin-top:2vh; font-size:2vh; color:#B79D46; opacity:0.9; }
+.premium { margin-top:1.5vh; font-size:2vh; color:#B79D46; opacity:0.9; }
 
 /* FOOTER */
 footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-size:1.6vh; }
 
 /* MOBILANPASSNING */
 @media(max-width:768px){
-    .product-img { width:52vw; }
+    .product-img { width:40vw; }
     h1 { font-size:4vh; }
     p { font-size:2.3vh; max-width:85vw; }
     .feature-box { flex-direction:column; gap:1.5vh; }
@@ -61,17 +59,22 @@ footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-si
 </header>
 
 <div class="main-wrapper">
-    <!-- Hero-bild -->
-    <img id="product" class="product-img" src="images/hero1.jpg" alt="Beloria Produkt">
+    <!-- Hero-bilder -->
+    <img id="product1" class="product-img" src="images/hero1.jpg" alt="Beloria Produkt 1">
+    <img id="product2" class="product-img" src="images/hero3.jpg" alt="Beloria Produkt 2">
+
     <h1>Datorfodralet – Beloria UF</h1>
+
     <p>
         Vårt exklusiva datorfodral med inbyggd musmatta.  
         Perfekt för elever, entreprenörer och kreativa användare.
     </p>
+
     <div class="feature-box">
         <div class="feature">Premiumkvalitet</div>
         <div class="feature">Inbyggd musmatta</div>
     </div>
+
     <div class="premium">Premium Design & Innovation</div>
 </div>
 
@@ -79,11 +82,17 @@ footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-si
 
 <script>
 window.addEventListener('load', ()=>{
-    document.querySelector('.main-wrapper').classList.add('visible');
-    const img = document.getElementById('product');
-    img.classList.remove('show-img');
-    requestAnimationFrame(()=>{ img.classList.add('show-img'); });
+    const wrapper = document.querySelector('.main-wrapper');
+    wrapper.classList.add('visible');
+
+    const img1 = document.getElementById('product1');
+    const img2 = document.getElementById('product2');
+    [img1, img2].forEach(img=>{
+        img.classList.remove('show-img');
+        requestAnimationFrame(()=>{ img.classList.add('show-img'); });
+    });
 });
+
 document.querySelectorAll('nav a').forEach(link=>{
     link.addEventListener('click', e=>{
         e.preventDefault();
