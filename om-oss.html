@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Beloria UF – Om oss</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
 html, body {
     margin:0; padding:0; height:100vh;
@@ -15,48 +16,70 @@ html, body {
 }
 
 /* MENY */
-header { display:flex; justify-content:space-between; align-items:center; padding:2vh 8%; background:#000; border-bottom:1px solid #B79D46; }
-.logo { font-family:'Playfair Display', serif; font-size:3.4vh; font-weight:700; color:#B79D46; }
-nav a { margin-left:3vw; text-decoration:none; color:#fff; font-size:2.2vh; font-weight:600; transition:0.3s; }
-nav a:hover { color:#B79D46; }
-
-/* SIDAN */
-.main-wrapper { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; opacity:0; transform:translateY(2vh); transition:opacity 0.8s ease, transform 0.8s ease; }
-.visible { opacity:1; transform:translateY(0); }
-
-/* BILDANIMATION */
-.hero-img {
-    width:24vw; max-width:330px; min-width:200px;
-    border:0.35vh solid #B79D46;
-    border-radius:1.4vh;
-    box-shadow:0 0.5vh 2vh rgba(183,157,70,0.45);
-
-    opacity:0;
-    transform:scale(1.1);
-    transition:opacity 1s ease, transform 1.1s ease;
+header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:2vh 8%;
+    background:#000;
+    border-bottom:1px solid #B79D46;
 }
-.show-img { opacity:1 !important; transform:scale(1) !important; }
+.logo {
+    font-family:'Playfair Display', serif;
+    font-size:3.4vh;
+    font-weight:700;
+    color:#B79D46;
+}
+nav {
+    display:flex;
+    flex-direction:row;
+    gap:4vw;
+}
+nav a {
+    text-decoration:none;
+    color:#fff;
+    font-size:2.2vh;
+    font-weight:600;
+    transition:0.3s;
+}
+nav a:hover { color:#B79D46; }
+@media(max-width:768px){
+    nav { gap:6vw; }
+    nav a { font-size:2.1vh; }
+}
 
 /* TEXT */
-h1 { margin-top:2vh; font-size:4vh; color:#B79D46; font-family:'Playfair Display', serif; font-weight:700; }
-p { font-size:2.2vh; color:#ddd; max-width:70vw; line-height:1.45; margin-top:1.5vh; }
+.main-wrapper {
+    flex:1;
+    overflow-y:auto;
+    padding:5vh 10%;
+    text-align:center;
+}
+h1 {
+    font-size:4vh;
+    color:#B79D46;
+    margin-bottom:2vh;
+}
+p {
+    font-size:2.2vh;
+    color:#ddd;
+    max-width:75vw;
+    margin:1.5vh auto;
+    line-height:1.5;
+}
 
 /* FOOTER */
-footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-size:1.6vh; }
-
-/* KONTAKT TEXT */
-.contact { font-size:2vh; color:#ddd; margin-top:1.5vh; opacity:0.85; }
-
-/* MOBILANPASSNING */
-@media(max-width:768px){
-    .hero-img { width:52vw; }
-    h1 { font-size:4vh; }
-    p { font-size:2.3vh; max-width:85vw; }
-    .contact { font-size:2vh; }
+footer {
+    text-align:center;
+    padding:1vh 0;
+    border-top:1px solid #B79D46;
+    font-size:1.6vh;
 }
 </style>
 </head>
+
 <body>
+
 <header>
     <div class="logo">Beloria UF</div>
     <nav>
@@ -67,41 +90,22 @@ footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-si
 </header>
 
 <div class="main-wrapper">
-    <img id="hero" class="hero-img" src="images/hero2.jpg" alt="Beloria Hero">
+    <h1>Om oss</h1>
 
-    <h1>Om Beloria UF</h1>
     <p>
-        Beloria UF skapar produkter som kombinerar modern stil med smart funktion.
-        Vårt flaggskepp är datorfodralet med inbyggd musmatta. Kvalitet, exklusiv känsla och innovativa lösningar – utvecklade för studenter och entreprenörer.
+        Vi på Beloria UF strävar efter att skapa stilrena datorfodral med inbyggd musmatta 
+        som kombinerar funktionalitet och lyxig design.
     </p>
 
-    <div class="contact">
-        Vid eventuella frågor hör av er till <a href="mailto:Beloria.uf@gmail.com" style="color:#B79D46; text-decoration:none;">Beloria.uf@gmail.com</a>
-    </div>
+    <p>
+        Vid eventuella frågor, hör av er till:
+        <br>
+        <strong style="color:#B79D46;">Beloria.uf@gmail.com</strong>
+    </p>
+
 </div>
 
-<footer>Beloria UF © 2025 – Premium Design & Innovation</footer>
+<footer>Beloria UF © 2025 – Premium Design</footer>
 
-<script>
-window.addEventListener('load', ()=>{
-    document.querySelector('.main-wrapper').classList.add('visible');
-
-    const img = document.getElementById('hero');
-    img.classList.remove('show-img');
-    requestAnimationFrame(()=>{
-        img.classList.add('show-img');
-    });
-});
-
-/* Fade mellan sidor */
-document.querySelectorAll('nav a').forEach(link=>{
-    link.addEventListener('click', e=>{
-        e.preventDefault();
-        const href = link.getAttribute('href');
-        document.querySelector('.main-wrapper').classList.remove('visible');
-        setTimeout(()=>{ window.location.href = href; }, 350);
-    });
-});
-</script>
 </body>
 </html>
