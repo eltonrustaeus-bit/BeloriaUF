@@ -3,94 +3,150 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Produkter – Beloria UF</title>
+<title>Beloria UF – Produkter</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
-    body {
-        margin: 0;
-        background: black;
-        font-family: Arial, sans-serif;
-        color: white;
-    }
+html, body {
+    margin:0; padding:0; height:100vh;
+    background:#000; color:#fff;
+    font-family:'Libre Baskerville', serif;
+    display:flex; flex-direction:column;
+    overflow:hidden;
+}
 
-    .navbar {
-        width: 100%;
-        background: rgba(0,0,0,0.85);
-        padding: 15px 0;
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-    }
+/* HEADER */
+header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:2vh 8%;
+    background:#000;
+    border-bottom:1px solid #B79D46;
+}
+.logo {
+    font-family:'Playfair Display', serif;
+    font-size:3.4vh; font-weight:700; color:#B79D46;
+}
+nav {
+    display:flex;
+    gap:4vw;
+}
+nav a {
+    text-decoration:none;
+    color:#fff;
+    font-size:2.2vh;
+    font-weight:600;
+}
+nav a:hover { color:#B79D46; }
 
-    .navbar a {
-        color: white;
-        text-decoration: none;
-        font-size: 20px;
-        font-weight: 600;
-    }
+/* SIDAN */
+.main-wrapper {
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:3vh;
+    text-align:center;
+    overflow:hidden;
+}
 
-    .products-container {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 40px;
-        padding: 50px 0;
-        flex-wrap: nowrap;
-    }
+/* PRODUKTGRID */
+.product-grid {
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:flex-start;
+    gap:6vw;
+}
 
+/* PRODUKTKORT */
+.product-card {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:1.5vh;
+    width:20vw;
+}
+
+.product-img {
+    width:100%;
+    border:0.35vh solid #B79D46;
+    border-radius:1.2vh;
+    box-shadow:0 0.5vh 2vh rgba(183,157,70,0.4);
+}
+
+/* PRIS + KNAPP */
+.price {
+    color:#B79D46;
+    font-size:2.1vh;
+    font-weight:700;
+}
+
+.buy-btn {
+    background:#B79D46;
+    color:#000;
+    border:none;
+    padding:1vh 2vw;
+    border-radius:1vh;
+    font-size:1.9vh;
+    font-weight:700;
+    cursor:pointer;
+}
+.buy-btn:hover {
+    background:#fff;
+    color:#B79D46;
+}
+
+/* MOBIL LAYOUT – exakt samma stil, bara mindre */
+@media(max-width:768px){
+    .product-grid {
+        gap:4vw;
+    }
     .product-card {
-        background: #111;
-        padding: 20px;
-        border-radius: 15px;
-        width: 260px;
-        text-align: center;
-        border: 1px solid #333;
+        width:40vw;
     }
-
-    .product-card img {
-        width: 100%;
-        height: auto;
-        border-radius: 12px;
+    .product-img {
+        width:100%;
     }
-
-    .price {
-        font-size: 20px;
-        margin: 15px 0 5px 0;
-        font-weight: bold;
-    }
-
-    .buy-btn {
-        background: #0fa;
-        color: black;
-        border: none;
-        padding: 12px 20px;
-        border-radius: 10px;
-        font-size: 18px;
-        font-weight: 600;
-        cursor: pointer;
-        width: 100%;
-    }
+}
 </style>
 </head>
+
 <body>
 
-<div class="navbar">
-    <a href="index.html">Hem</a>
-    <a href="produkter.html">Produkter</a>
-    <a href="om-oss.html">Om oss</a>
-</div>
+<header>
+    <div class="logo">Beloria UF</div>
+    <nav>
+        <a href="index.html">Hem</a>
+        <a href="produkter.html">Produkter</a>
+        <a href="om-oss.html">Om oss</a>
+    </nav>
+</header>
 
-<div class="products-container">
-    <div class="product-card">
-        <img src="hero1.jpg" alt="Produkt 1">
-        <p class="price">200 kr – inklusive frakt</p>
-        <button class="buy-btn">Köp</button>
+<div class="main-wrapper">
+
+    <h1 style="color:#B79D46; font-family:'Playfair Display'; font-size:4vh;">Våra Produkter</h1>
+
+    <div class="product-grid">
+
+        <!-- Produkt 1 -->
+        <div class="product-card">
+            <img src="images/hero1.jpg" class="product-img" alt="Produkt 1">
+            <div class="price">200 kr – inkl. frakt</div>
+            <button class="buy-btn">Köp</button>
+        </div>
+
+        <!-- Produkt 2 -->
+        <div class="product-card">
+            <img src="images/hero3.jpg" class="product-img" alt="Produkt 2">
+            <div class="price">200 kr – inkl. frakt</div>
+            <button class="buy-btn">Köp</button>
+        </div>
+
     </div>
 
-    <div class="product-card">
-        <img src="hero3.jpg" alt="Produkt 2">
-        <p class="price">200 kr – inklusive frakt</p>
-        <button class="buy-btn">Köp</button>
-    </div>
 </div>
 
 </body>
