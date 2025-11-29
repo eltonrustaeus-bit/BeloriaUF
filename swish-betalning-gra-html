@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beloria UF – Grå Datorfodral</title>
+<style>
+body { margin:0; padding:0; font-family:'Libre Baskerville', serif; background:#000; color:#fff; text-align:center; }
+header { padding:2vh 5%; border-bottom:1px solid #B79D46; }
+header .logo { font-size:3.4vh; font-weight:700; color:#B79D46; }
+.main-wrapper { padding:5vh 2vw; }
+.product-img { width:50vw; max-width:250px; border:0.35vh solid #B79D46; border-radius:1.4vh; }
+.price { color:#B79D46; font-size:2.2vh; font-weight:700; margin:2vh 0; }
+.buy-btn { background:#B79D46; color:#000; border:none; padding:1vh 3vw; border-radius:1vh; font-size:2vh; font-weight:700; text-decoration:none; display:inline-block; transition:0.3s; }
+.buy-btn:hover { background:#fff; color:#B79D46; }
+footer { padding:2vh 0; border-top:1px solid #B79D46; font-size:1.6vh; margin-top:5vh; }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Beloria UF</div>
+</header>
+
+<div class="main-wrapper">
+    <h1>Grå Datorfodral</h1>
+    <img src="images/hero3.jpg" alt="Grå datorfodral" class="product-img">
+    <div class="price">200 kr – inklusive frakt</div>
+    <a href="swish://paymentrequest?token=DIN_SWISH_QR_TOKEN_GRA" class="buy-btn">Betala med Swish</a>
+</div>
+
+<footer>Beloria UF © 2025 – Premium Design & Innovation</footer>
+
+</body>
+</html>
