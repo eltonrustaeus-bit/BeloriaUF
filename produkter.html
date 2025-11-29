@@ -6,30 +6,44 @@
 <title>Beloria UF – Produkter</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <style>
-html, body { margin:0; padding:0; background:#000; color:#fff; font-family:'Libre Baskerville', serif; overflow-x:hidden; }
-header { display:flex; justify-content:space-between; align-items:center; padding:2vh 5%; background:#000; border-bottom:1px solid #B79D46; }
+html, body {
+    margin:0; padding:0; background:#000; color:#fff; font-family:'Libre Baskerville', serif; overflow-x:hidden;
+}
+
+/* MENY */
+header {
+    display:flex; justify-content:space-between; align-items:center;
+    padding:2vh 5%; background:#000; border-bottom:1px solid #B79D46;
+}
 .logo { font-family:'Playfair Display', serif; font-size:3.4vh; font-weight:700; color:#B79D46; }
 nav { display:flex; gap:4vw; flex-wrap:wrap; }
 nav a { text-decoration:none; color:#fff; font-size:2.2vh; font-weight:600; padding:0.5vh 1vw; transition:0.3s; }
 nav a:hover { color:#B79D46; }
 
-.main-wrapper { padding:4vh 2vw; text-align:center; }
+/* SIDAN */
+.main-wrapper { padding:4vh 2vw; text-align:center; opacity:0; transform:translateY(2vh); transition:opacity 0.8s ease, transform 0.8s ease; }
+.visible { opacity:1; transform:translateY(0); }
+
 h1 { font-size:4vh; color:#B79D46; margin-bottom:3vh; }
-
-.image-container { display:flex; justify-content:center; gap:4vw; flex-wrap:wrap; }
-.product-card { display:flex; flex-direction:column; align-items:center; gap:1vh; opacity:0; transform:translateY(3vh); transition:opacity 0.8s ease, transform 0.8s ease; }
-.product-card.visible { opacity:1; transform:translateY(0); }
-
-.product-img { width:35vw; max-width:180px; border:0.35vh solid #B79D46; border-radius:1.4vh; }
-.price { color:#B79D46; font-size:2.1vh; font-weight:700; margin:1vh 0; }
 .description { font-size:1.9vh; color:#ccc; max-width:180px; text-align:center; line-height:1.3; margin-bottom:1vh; }
+
+/* PRODUKTER */
+.image-container { display:flex; justify-content:center; gap:4vw; flex-wrap:wrap; }
+.product-card { display:flex; flex-direction:column; align-items:center; gap:1vh; }
+.product-img {
+    width:35vw; max-width:180px; border:0.35vh solid #B79D46; border-radius:1.4vh;
+    box-shadow:0 0.5vh 2vh rgba(183,157,70,0.45); opacity:0; transform:scale(1.1);
+    transition:opacity 1s ease, transform 1.1s ease;
+}
+.product-img.show-img { opacity:1 !important; transform:scale(1) !important; }
+
+.price { color:#B79D46; font-size:2.1vh; font-weight:700; margin:1vh 0; }
 .buy-btn { background:#B79D46; color:#000; border:none; padding:0.8vh 2vw; border-radius:1vh; font-size:1.9vh; font-weight:700; cursor:pointer; text-decoration:none; display:inline-block; transition:0.3s; }
 .buy-btn:hover { background:#fff; color:#B79D46; }
 
 @media(max-width:768px){
     .image-container { gap:6vw; }
     .product-img { width:45vw; max-width:160px; }
-    nav { gap:5vw; }
     nav a { font-size:2vh; padding:0.5vh 0.8vw; }
 }
 footer { text-align:center; padding:2vh 0; border-top:1px solid #B79D46; font-size:1.6vh; margin-top:3vh; }
@@ -70,9 +84,13 @@ footer { text-align:center; padding:2vh 0; border-top:1px solid #B79D46; font-si
 
 <script>
 window.addEventListener('load', ()=>{
-    const cards = document.querySelectorAll('.product-card');
-    cards.forEach((card, i)=>{
-        setTimeout(()=>{ card.classList.add('visible'); }, i*200);
+    // Hela main-wrapper fade in
+    document.querySelector('.main-wrapper').classList.add('visible');
+
+    // Bilder får samma animation som på Hem/Om-oss
+    document.querySelectorAll('.product-img').forEach(img=>{
+        img.classList.remove('show-img');
+        requestAnimationFrame(()=>{ img.classList.add('show-img'); });
     });
 });
 </script>
