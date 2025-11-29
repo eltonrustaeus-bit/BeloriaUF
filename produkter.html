@@ -6,29 +6,18 @@
 <title>Beloria UF – Produkter</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <style>
-html, body {
-    margin:0; padding:0; background:#000; color:#fff; font-family:'Libre Baskerville', serif; overflow-x:hidden;
-}
-
-/* MENY */
-header {
-    display:flex; justify-content:space-between; align-items:center;
-    padding:2vh 5%; background:#000; border-bottom:1px solid #B79D46;
-}
+html, body { margin:0; padding:0; background:#000; color:#fff; font-family:'Libre Baskerville', serif; overflow-x:hidden; }
+header { display:flex; justify-content:space-between; align-items:center; padding:2vh 5%; background:#000; border-bottom:1px solid #B79D46; }
 .logo { font-family:'Playfair Display', serif; font-size:3.4vh; font-weight:700; color:#B79D46; }
 nav { display:flex; gap:4vw; flex-wrap:wrap; }
 nav a { text-decoration:none; color:#fff; font-size:2.2vh; font-weight:600; padding:0.5vh 1vw; transition:0.3s; }
 nav a:hover { color:#B79D46; }
 
-/* SIDAN */
 .main-wrapper { padding:4vh 2vw; text-align:center; }
 h1 { font-size:4vh; color:#B79D46; margin-bottom:3vh; }
-
-/* PRODUKTER */
-.image-container { display:flex; justify-content:center; gap:4vw; flex-wrap:wrap; }
+.image-container { display:flex; justify-content:center; gap:4vw; flex-wrap:wrap; margin-bottom:3vh; }
 .product-card { display:flex; flex-direction:column; align-items:center; gap:1vh; }
-.product-img { width:35vw; max-width:180px; border:0.35vh solid #B79D46; border-radius:1.4vh; box-shadow:0 0.5vh 2vh rgba(183,157,70,0.45); }
-.description { font-size:1.9vh; color:#ccc; max-width:180px; text-align:center; line-height:1.3; margin-bottom:1vh; }
+.product-img { width:35vw; max-width:180px; border:0.35vh solid #B79D46; border-radius:1.4vh; }
 .price { color:#B79D46; font-size:2.1vh; font-weight:700; margin:1vh 0; }
 .buy-btn { background:#B79D46; color:#000; border:none; padding:0.8vh 2vw; border-radius:1vh; font-size:1.9vh; font-weight:700; cursor:pointer; text-decoration:none; display:inline-block; transition:0.3s; }
 .buy-btn:hover { background:#fff; color:#B79D46; }
@@ -36,6 +25,7 @@ h1 { font-size:4vh; color:#B79D46; margin-bottom:3vh; }
 @media(max-width:768px){
     .image-container { gap:6vw; }
     .product-img { width:45vw; max-width:160px; }
+    nav { gap:5vw; }
     nav a { font-size:2vh; padding:0.5vh 0.8vw; }
 }
 footer { text-align:center; padding:2vh 0; border-top:1px solid #B79D46; font-size:1.6vh; margin-top:3vh; }
@@ -58,14 +48,12 @@ footer { text-align:center; padding:2vh 0; border-top:1px solid #B79D46; font-si
         <!-- Svart produkt -->
         <div class="product-card">
             <img src="images/hero1.jpg" class="product-img" alt="Svart datorfodral">
-            <div class="description">Här är vårt svarta datorfodral med stilren design och premiumkänsla.</div>
             <div class="price">200 kr – inklusive frakt</div>
             <a href="swish-betalning-svart.html" class="buy-btn">Köp</a>
         </div>
         <!-- Grå produkt -->
         <div class="product-card">
             <img src="images/hero3.jpg" class="product-img" alt="Grå datorfodral">
-            <div class="description">Här är vårt gråa datorfodral – elegant, funktionellt och exklusivt.</div>
             <div class="price">200 kr – inklusive frakt</div>
             <a href="swish-betalning-gra.html" class="buy-btn">Köp</a>
         </div>
