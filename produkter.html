@@ -6,71 +6,33 @@
 <title>Beloria UF – Produkter</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <style>
-html, body {
-    margin:0; padding:0; height:100vh;
-    background:#000; color:#fff;
-    font-family:'Libre Baskerville', serif;
-    overflow-x:hidden;
-    display:flex; flex-direction:column;
-}
-
-/* MENY – kompatibel med Safari */
-header {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:2vh 5%;
-    background:#000;
-    border-bottom:1px solid #B79D46;
-}
+html, body { margin:0; padding:0; background:#000; color:#fff; font-family:'Libre Baskerville', serif; overflow-x:hidden; }
+header { display:flex; justify-content:space-between; align-items:center; padding:2vh 5%; background:#000; border-bottom:1px solid #B79D46; }
 .logo { font-family:'Playfair Display', serif; font-size:3.4vh; font-weight:700; color:#B79D46; }
-nav { display:flex; flex-direction:row; flex-wrap:wrap; }
-nav a {
-    text-decoration:none; color:#fff; font-size:2.2vh; font-weight:600;
-    padding:0.5vh 1vw; margin-right:1.5vw; white-space:nowrap; transition:0.3s;
-}
-nav a:last-child { margin-right:0; }
+nav { display:flex; gap:4vw; flex-wrap:wrap; }
+nav a { text-decoration:none; color:#fff; font-size:2.2vh; font-weight:600; padding:0.5vh 1vw; transition:0.3s; }
 nav a:hover { color:#B79D46; }
-@media(max-width:768px){ nav a { font-size:2vh; margin-right:1vw; padding:0.5vh 0.8vw; } }
 
-/* SIDAN */
-.main-wrapper { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:3vh; opacity:0; transform:translateY(2vh); transition:opacity 0.8s ease, transform 0.8s ease; }
-.visible { opacity:1; transform:translateY(0); }
-
-/* PRODUKTER */
-.image-container { display:flex; justify-content:center; align-items:center; gap:4vw; flex-wrap:wrap; }
+.main-wrapper { padding:4vh 2vw; text-align:center; }
+h1 { font-size:4vh; color:#B79D46; margin-bottom:3vh; }
+.image-container { display:flex; justify-content:center; gap:4vw; flex-wrap:wrap; margin-bottom:3vh; }
 .product-card { display:flex; flex-direction:column; align-items:center; gap:1vh; }
-.product-img { width:18vw; max-width:180px; min-width:130px; border:0.35vh solid #B79D46; border-radius:1.4vh; box-shadow:0 0.5vh 2vh rgba(183,157,70,0.45); }
-.buy-price-container { display:flex; flex-direction:column; align-items:center; gap:0.5vh; margin-top:0.5vh; }
-.price { color:#B79D46; font-size:2.1vh; font-weight:700; }
-.buy-btn { background:#B79D46; color:#000; border:none; padding:0.8vh 2vw; border-radius:1vh; font-size:1.9vh; font-weight:700; cursor:pointer; transition:0.3s; }
+.product-img { width:35vw; max-width:180px; border:0.35vh solid #B79D46; border-radius:1.4vh; }
+.price { color:#B79D46; font-size:2.1vh; font-weight:700; margin:1vh 0; }
+.buy-btn { background:#B79D46; color:#000; border:none; padding:0.8vh 2vw; border-radius:1vh; font-size:1.9vh; font-weight:700; cursor:pointer; text-decoration:none; display:inline-block; transition:0.3s; }
 .buy-btn:hover { background:#fff; color:#B79D46; }
 
-/* TEXT */
-h1 { font-size:4vh; color:#B79D46; font-family:'Playfair Display', serif; font-weight:700; }
-p { font-size:2vh; color:#ddd; max-width:70vw; line-height:1.45; }
-
-/* FEATURE */
-.feature-box { display:flex; justify-content:center; gap:1vw; margin-bottom:1.5vh; }
-.feature { border:0.25vh solid #B79D46; padding:0.8vh 1.2vw; border-radius:1vh; font-size:1.8vh; opacity:0.85; }
-.premium { font-size:2vh; color:#B79D46; opacity:0.9; }
-
-/* FOOTER */
-footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-size:1.6vh; }
-
-/* MOBILANPASSNING */
 @media(max-width:768px){
-    .product-img { width:35vw; max-width:160px; }
-    h1 { font-size:3.8vh; }
-    p { font-size:1.9vh; max-width:85vw; }
-    .feature { font-size:1.6vh; padding:0.6vh 1vw; }
-    .price { font-size:1.8vh; }
-    .buy-btn { font-size:1.7vh; padding:0.6vh 1.5vw; }
-    .image-container { gap:3vw; }
+    .image-container { gap:6vw; }
+    .product-img { width:45vw; max-width:160px; }
+    nav { gap:5vw; }
+    nav a { font-size:2vh; padding:0.5vh 0.8vw; }
 }
+footer { text-align:center; padding:2vh 0; border-top:1px solid #B79D46; font-size:1.6vh; margin-top:3vh; }
 </style>
 </head>
 <body>
+
 <header>
     <div class="logo">Beloria UF</div>
     <nav>
@@ -83,42 +45,22 @@ footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-si
 <div class="main-wrapper">
     <h1>Våra Produkter</h1>
     <div class="image-container">
+        <!-- Svart produkt -->
         <div class="product-card">
-            <img src="images/hero1.jpg" class="product-img" alt="Produkt 1">
-            <div class="buy-price-container">
-                <button class="buy-btn">Köp</button>
-                <div class="price">200 kr – inklusive frakt</div>
-            </div>
+            <img src="images/hero1.jpg" class="product-img" alt="Svart datorfodral">
+            <div class="price">200 kr – inklusive frakt</div>
+            <a href="swish-betalning-svart.html" class="buy-btn">Köp</a>
         </div>
+        <!-- Grå produkt -->
         <div class="product-card">
-            <img src="images/hero3.jpg" class="product-img" alt="Produkt 2">
-            <div class="buy-price-container">
-                <button class="buy-btn">Köp</button>
-                <div class="price">200 kr – inklusive frakt</div>
-            </div>
+            <img src="images/hero3.jpg" class="product-img" alt="Grå datorfodral">
+            <div class="price">200 kr – inklusive frakt</div>
+            <a href="swish-betalning-gra.html" class="buy-btn">Köp</a>
         </div>
     </div>
-
-    <p>
-        Vårt exklusiva datorfodral med inbyggd musmatta.  
-        Perfekt för elever, entreprenörer och kreativa användare.  
-        Vi har både svart och grått att välja på.
-    </p>
-
-    <div class="feature-box">
-        <div class="feature">Premiumkvalitet</div>
-        <div class="feature">Inbyggd musmatta</div>
-    </div>
-
-    <div class="premium">Premium Design & Innovation</div>
 </div>
 
 <footer>Beloria UF © 2025 – Premium Design & Innovation</footer>
 
-<script>
-window.addEventListener('load', ()=>{
-    document.querySelector('.main-wrapper').classList.add('visible');
-});
-</script>
 </body>
 </html>
