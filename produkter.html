@@ -14,7 +14,7 @@ html, body {
     display:flex; flex-direction:column;
 }
 
-/* MENY – kompatibel med Safari */
+/* MENY */
 header {
     display:flex;
     justify-content:space-between;
@@ -31,7 +31,6 @@ nav a {
 }
 nav a:last-child { margin-right:0; }
 nav a:hover { color:#B79D46; }
-@media(max-width:768px){ nav a { font-size:2vh; margin-right:1vw; padding:0.5vh 0.8vw; } }
 
 /* SIDAN */
 .main-wrapper { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:3vh; opacity:0; transform:translateY(2vh); transition:opacity 0.8s ease, transform 0.8s ease; }
@@ -46,28 +45,44 @@ nav a:hover { color:#B79D46; }
 .buy-btn { background:#B79D46; color:#000; border:none; padding:0.8vh 2vw; border-radius:1vh; font-size:1.9vh; font-weight:700; cursor:pointer; transition:0.3s; }
 .buy-btn:hover { background:#fff; color:#B79D46; }
 
+/* STORLEKSGUIDE */
+.size-box {
+    margin-top:4vh;
+    padding:2vh 2vw;
+    border:1px solid #B79D46;
+    border-radius:1.3vh;
+    max-width:60vw;
+}
+.size-title {
+    font-size:2.2vh;
+    color:#B79D46;
+    font-weight:700;
+}
+.size-text {
+    font-size:1.9vh;
+    color:#ddd;
+    margin-top:0.5vh;
+}
+.size-btn {
+    margin-top:1.5vh;
+    background:#B79D46;
+    color:#000;
+    border:none;
+    padding:1vh 2vw;
+    font-size:1.9vh;
+    border-radius:1vh;
+    cursor:pointer;
+    transition:0.3s;
+}
+.size-btn:hover { background:#fff; color:#B79D46; }
+
 /* TEXT */
 h1 { font-size:4vh; color:#B79D46; font-family:'Playfair Display', serif; font-weight:700; }
 p { font-size:2vh; color:#ddd; max-width:70vw; line-height:1.45; }
 
-/* FEATURE */
-.feature-box { display:flex; justify-content:center; gap:1vw; margin-bottom:1.5vh; }
-.feature { border:0.25vh solid #B79D46; padding:0.8vh 1.2vw; border-radius:1vh; font-size:1.8vh; opacity:0.85; }
-.premium { font-size:2vh; color:#B79D46; opacity:0.9; }
-
 /* FOOTER */
 footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-size:1.6vh; }
 
-/* MOBILANPASSNING */
-@media(max-width:768px){
-    .product-img { width:35vw; max-width:160px; }
-    h1 { font-size:3.8vh; }
-    p { font-size:1.9vh; max-width:85vw; }
-    .feature { font-size:1.6vh; padding:0.6vh 1vw; }
-    .price { font-size:1.8vh; }
-    .buy-btn { font-size:1.7vh; padding:0.6vh 1.5vw; }
-    .image-container { gap:3vw; }
-}
 </style>
 </head>
 <body>
@@ -82,6 +97,7 @@ footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-si
 
 <div class="main-wrapper">
     <h1>Våra Produkter</h1>
+
     <div class="image-container">
         <div class="product-card">
             <img src="images/hero6.png" class="product-img" alt="Svart fodral">
@@ -90,6 +106,7 @@ footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-si
                 <div class="price">200 kr – inklusive frakt</div>
             </div>
         </div>
+
         <div class="product-card">
             <img src="images/hero7.png" class="product-img" alt="Grått fodral">
             <div class="buy-price-container">
@@ -105,12 +122,15 @@ footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-si
         Vi har både svart och grått att välja på.
     </p>
 
-    <div class="feature-box">
-        <div class="feature">Premiumkvalitet</div>
-        <div class="feature">Inbyggd musmatta</div>
+    <!-- NY STORLEKSGUIDE-SEKTION -->
+    <div class="size-box">
+        <div class="size-title">Osäker på storlek?</div>
+        <div class="size-text">
+            Se vår storleksguide för att hitta rätt passform för just din dator.
+        </div>
+        <button class="size-btn" onclick="location.href='storlekar.html'">Se storleksguide</button>
     </div>
 
-    <div class="premium">Premium Design & Innovation</div>
 </div>
 
 <footer>Beloria UF © 2025 – Premium Design & Innovation</footer>
