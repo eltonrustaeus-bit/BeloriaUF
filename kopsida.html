@@ -34,18 +34,21 @@ nav a:hover { color:#B79D46; }
 
 /* SIDAN */
 .main-wrapper { 
-    flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:3.5vh; 
+    flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:4vh; 
     opacity:0; transform:translateY(2vh); transition:opacity 0.8s ease, transform 0.8s ease; padding:0 5%;
 }
 .visible { opacity:1; transform:translateY(0); }
 
-/* TEXT & MEDDELANDE */
+/* TEXT & KONTAKT */
 h1 { font-size:4.2vh; color:#B79D46; font-family:'Playfair Display', serif; font-weight:700; margin-bottom:1vh; }
 p { font-size:2.1vh; color:#ddd; max-width:70vw; line-height:1.55; }
-.contact-msg { margin-top:2.5vh; font-size:2.5vh; color:#B79D46; font-weight:700; text-shadow:0 0 5px rgba(183,157,70,0.6); }
-
-/* KÖPSIDA-BILD */
-.purchase-img { width:35vw; max-width:280px; min-width:180px; border:0.35vh solid #B79D46; border-radius:1.4vh; box-shadow:0 0.5vh 2vh rgba(183,157,70,0.45); margin-top:2.5vh; }
+.contact-msg {
+    margin-top:2.5vh; 
+    font-size:2.4vh; 
+    color:#B79D46; 
+    font-weight:700;
+}
+.contact-msg a { color:#B79D46; text-decoration:none; }
 
 /* FOOTER */
 footer { text-align:center; padding:1.2vh 0; border-top:1px solid #B79D46; font-size:1.6vh; color:#ddd; }
@@ -55,7 +58,6 @@ footer { text-align:center; padding:1.2vh 0; border-top:1px solid #B79D46; font-
     h1 { font-size:4vh; }
     p { font-size:2vh; max-width:85vw; }
     .contact-msg { font-size:3vh; }
-    .purchase-img { width:60vw; max-width:220px; }
 }
 </style>
 </head>
@@ -71,8 +73,6 @@ footer { text-align:center; padding:1.2vh 0; border-top:1px solid #B79D46; font-
 
 <div class="main-wrapper">
     <h1>Tack för ditt intresse!</h1>
-
-    <img src="images/hero6.png" alt="Produktbild" class="purchase-img">
 
     <p>
         Nu när du vet vilken färg och storlek du önskar, vänligen kontakta oss för att slutföra beställningen.  
