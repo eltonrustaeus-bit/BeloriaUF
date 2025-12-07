@@ -1,1 +1,31 @@
+export default function SizeGuide() {
+  return (
+    <main className="min-h-screen bg-black text-white px-6 py-24 flex flex-col items-center">
+      
+      <h1 className="text-4xl font-semibold mb-8 tracking-tight">
+        Storleksguide
+      </h1>
 
+      <p className="text-neutral-300 text-center max-w-xl mb-10">
+        Här hittar du alla mått och storleksalternativ för vår produkt. 
+        Använd guiden nedan för att säkerställa att du väljer rätt storlek.
+      </p>
+
+      <div className="w-full max-w-3xl rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900 p-4">
+        <img
+          src="/hero8.png"
+          alt="Storleksguide"
+          className="w-full h-auto object-contain"
+        />
+      </div>
+
+      <a
+        href="/products"
+        className="mt-12 px-6 py-3 bg-white text-black font-medium rounded-lg hover:bg-neutral-200 transition"
+      >
+        Tillbaka till produkten
+      </a>
+
+    </main>
+  );
+}
