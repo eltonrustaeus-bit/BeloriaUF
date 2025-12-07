@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beloria UF – Köp</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<style>
+html, body {
+    margin:0; padding:0; min-height:100vh;
+    background:#000; color:#fff;
+    font-family:'Libre Baskerville', serif;
+    display:flex; flex-direction:column;
+    overflow-x:hidden;
+}
+
+/* MENY */
+header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:2vh 5%;
+    background:#000;
+    border-bottom:1px solid #B79D46;
+}
+.logo { font-family:'Playfair Display', serif; font-size:3.4vh; font-weight:700; color:#B79D46; }
+nav { display:flex; flex-direction:row; flex-wrap:wrap; }
+nav a {
+    text-decoration:none; color:#fff; font-size:2.2vh; font-weight:600;
+    padding:0.5vh 1vw; margin-right:1.5vw; white-space:nowrap; transition:0.3s;
+}
+nav a:last-child { margin-right:0; }
+nav a:hover { color:#B79D46; }
+
+/* SIDAN */
+.main-wrapper { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:3vh; opacity:0; transform:translateY(2vh); transition:opacity 0.8s ease, transform 0.8s ease; padding:0 5%; }
+.visible { opacity:1; transform:translateY(0); }
+
+/* TEXT & MEDDELANDE */
+h1 { font-size:4vh; color:#B79D46; font-family:'Playfair Display', serif; font-weight:700; }
+p { font-size:2vh; color:#ddd; max-width:70vw; line-height:1.45; }
+.contact-msg { margin-top:2vh; font-size:1.9vh; color:#ddd; }
+.contact-msg a { color:#B79D46; text-decoration:none; font-weight:700; }
+
+/* KÖPSIDA-BILD */
+.purchase-img { width:35vw; max-width:250px; min-width:180px; border:0.35vh solid #B79D46; border-radius:1.4vh; box-shadow:0 0.5vh 2vh rgba(183,157,70,0.45); margin-top:2vh; }
+
+/* FOOTER */
+footer { text-align:center; padding:1vh 0; border-top:1px solid #B79D46; font-size:1.6vh; }
+
+/* MOBILANPASSNING */
+@media(max-width:768px){
+    h1 { font-size:3.8vh; }
+    p, .contact-msg { font-size:1.8vh; max-width:85vw; }
+    .purchase-img { width:60vw; max-width:220px; }
+}
+</style>
+</head>
+<body>
+<header>
+    <div class="logo">Beloria UF</div>
+    <nav>
+        <a href="index.html">Hem</a>
+        <a href="produkter.html">Produkter</a>
+        <a href="om-oss.html">Om oss</a>
+    </nav>
+</header>
+
+<div class="main-wrapper">
+    <h1>Tack för ditt intresse!</h1>
+
+    <img src="images/hero6.png" alt="Produktbild" class="purchase-img">
+
+    <p>
+        Nu när du vet vilken färg och storlek du önskar, vänligen kontakta oss för beställning.  
+        Ange produkt, färg och önskad storlek i ditt meddelande så hjälper vi dig vidare.
+    </p>
+
+    <div class="contact-msg">
+        Hör av dig till <a href="mailto:Beloria.uf@gmail.com">Beloria.uf@gmail.com</a> för att slutföra köpet.
+    </div>
+</div>
+
+<footer>Beloria UF © 2025 – Premium Design & Innovation</footer>
+
+<script>
+window.addEventListener('load', ()=>{
+    document.querySelector('.main-wrapper').classList.add('visible');
+});
+</script>
+</body>
+</html>
